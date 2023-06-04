@@ -1,95 +1,100 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import React, { useEffect, useRef } from "react";
+import styles from "./page.module.css";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ButtonGroupDemo } from "@/components/button-group/button-group-demo";
+import { Container } from "./container";
+
+let scrollThreshold = [0, 50];
 
 export default function Home() {
+  let { scrollY } = useScroll();
+  let scrollYOnDirectionChange = useRef(scrollY.get());
+  let lastPixelsScrolled = useRef<any>();
+  let lastScrollDirection = useRef<string>("down");
+  let pixelsScrolled = useMotionValue(0);
+  let height = useTransform(pixelsScrolled, scrollThreshold, [100, 60]);
+  let logoHeight = useTransform(pixelsScrolled, scrollThreshold, [33, 30]);
+  let backgroundOpacity = useTransform(
+    pixelsScrolled,
+    scrollThreshold,
+    [1, 0.4]
+  );
+  let backgroundColorTemplate = useMotionTemplate`rgba(250 250 249 / ${backgroundOpacity})`;
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      if (latest < 0) return;
+
+      let isScrollingDown = scrollY.getPrevious() - latest < 0;
+      let scrollDirection = isScrollingDown ? "down" : "up";
+      let currentPixelsScrolled = pixelsScrolled.get();
+      let newPixelsScrolled;
+
+      if (
+        lastScrollDirection.current !== scrollDirection &&
+        lastPixelsScrolled.current
+      ) {
+        lastPixelsScrolled.current = currentPixelsScrolled;
+        scrollYOnDirectionChange.current = latest;
+      }
+
+      if (isScrollingDown) {
+        newPixelsScrolled = Math.min(
+          lastPixelsScrolled.current +
+            (latest - scrollYOnDirectionChange.current),
+          scrollThreshold[1]
+        );
+      } else {
+        newPixelsScrolled = Math.max(
+          lastPixelsScrolled.current -
+            (scrollYOnDirectionChange.current - latest),
+          scrollThreshold[0]
+        );
+      }
+
+      pixelsScrolled.set(newPixelsScrolled);
+
+      lastScrollDirection.current = scrollDirection;
+    });
+  }, [pixelsScrolled, scrollY]);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+    <div className={styles.root}>
+      <motion.header
+        // style={{ height, backgroundColor: backgroundColorTemplate }}
+        style={{ height }}
+        className={styles.header}
+      >
+        <div className={styles.container}>
+          <a href="/">
+            {/* <Logo style={{ height: logoHeight }} /> */}
+            <div style={{ height: logoHeight }}>LOGOG</div>
           </a>
         </div>
+      </motion.header>
+      <div className={styles.content}>
+        <Container>
+          <ButtonGroupDemo />
+        </Container>
+        <Container>
+          <></>
+        </Container>
+        <Container>
+          {" "}
+          <></>
+        </Container>
+        <Container>
+          {" "}
+          <></>
+        </Container>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
