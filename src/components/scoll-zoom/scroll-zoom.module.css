@@ -1,0 +1,32 @@
+.root {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.zoom {
+  position: sticky;
+  top: 20vh;
+  will-change: transform;
+  width: 250px;
+  transform: scale(2.2);
+  background-color: bisque;
+  border: 1px solid black;
+
+  height: 100px;
+}
+
+.bottom {
+  height: 100%;
+}
+
+.top {
+  height: 80%;
+}
+
+.wrap {
+  height: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

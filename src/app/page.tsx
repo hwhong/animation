@@ -10,8 +10,15 @@ import {
 } from "framer-motion";
 import { ButtonGroupDemo } from "@/components/button-group/button-group-demo";
 import { Container } from "./container";
+import { ScrollZoom } from "@/components/scoll-zoom/scroll-zoom";
+import classNames from "classnames";
 
 let scrollThreshold = [0, 50];
+
+interface Content {
+  node: React.ReactNode;
+  title: string;
+}
 
 export default function Home() {
   let { scrollY } = useScroll();
@@ -65,6 +72,25 @@ export default function Home() {
     });
   }, [pixelsScrolled, scrollY]);
 
+  const contents: Content[] = [
+    {
+      node: <ButtonGroupDemo />,
+      title: "Button Group",
+    },
+    {
+      node: <ScrollZoom />,
+      title: "Scroll Zoom",
+    },
+    {
+      node: <ButtonGroupDemo />,
+      title: "Button Group",
+    },
+    {
+      node: <ButtonGroupDemo />,
+      title: "Button Group",
+    },
+  ];
+
   return (
     <div className={styles.root}>
       <motion.header
@@ -80,20 +106,15 @@ export default function Home() {
         </div>
       </motion.header>
       <div className={styles.content}>
-        <Container>
-          <ButtonGroupDemo />
-        </Container>
-        <Container>
-          <></>
-        </Container>
-        <Container>
-          {" "}
-          <></>
-        </Container>
-        <Container>
-          {" "}
-          <></>
-        </Container>
+        {contents.map(({ node, title }, i) => (
+          <Container
+            title={title}
+            key={title}
+            className={classNames({ [styles.scrollZoomOverride]: i === 1 })}
+          >
+            {node}
+          </Container>
+        ))}
       </div>
     </div>
   );

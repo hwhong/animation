@@ -3,4 +3,22 @@
   border-radius: 8px;
   height: 350px;
   background-color: white;
+  position: relative;
+}
+
+.header {
+  padding: 12px 24px;
+  color: #c0c0c0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.contentWrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+  align-items: center;
 }

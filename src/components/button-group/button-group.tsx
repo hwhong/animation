@@ -34,33 +34,37 @@ export function ButtonGroup({
     <div className={styles.root}>
       <div className={styles.top}>
         <ul className={styles.list}>
-          <motion.div
-            animate={controls}
-            style={{
-              position: "absolute",
-              height: "40px",
-              backgroundColor: "#EDEDED",
-              borderRadius: "20px",
-            }}
-          />
           {groupContents.map((content, i) => (
-            <li
-              key={content}
-              className={classNames(styles.item, {
-                [styles.activeWrapper]: i === activeIndex,
-              })}
-            >
-              <button
-                className={classNames(styles.button, {
-                  [styles.active]: i === activeIndex,
+            <>
+              {i === 0 && (
+                <motion.div
+                  animate={controls}
+                  style={{
+                    position: "absolute",
+                    height: "40px",
+                    backgroundColor: "#EDEDED",
+                    borderRadius: "20px",
+                  }}
+                />
+              )}
+              <li
+                key={content}
+                className={classNames(styles.item, {
+                  [styles.activeWrapper]: i === activeIndex,
                 })}
-                onClick={() => setActiveIndex(i)}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
               >
-                {content}
-              </button>
-            </li>
+                <button
+                  className={classNames(styles.button, {
+                    [styles.active]: i === activeIndex,
+                  })}
+                  onClick={() => setActiveIndex(i)}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                >
+                  {content}
+                </button>
+              </li>
+            </>
           ))}
         </ul>
       </div>

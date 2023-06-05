@@ -39,3 +39,7 @@
   gap: 16px;
   background-color: #f7f7f8;
 }
+
+.scrollZoomOverride {
+  height: 100%;
+}
