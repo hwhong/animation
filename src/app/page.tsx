@@ -8,11 +8,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ButtonGroupDemo } from "@/components/button-group/button-group-demo";
 import { Container } from "./container";
-import { ScrollZoom } from "@/components/scoll-zoom/scroll-zoom";
 import classNames from "classnames";
-import { FadeTransitionDemo } from "@/components/fade-transition/fade-transition-demo";
+import { ButtonGroupDemo, FadeTransitionDemo, ScrollZoom } from "@/components";
 
 let scrollThreshold = [0, 50];
 
@@ -100,10 +98,7 @@ export default function Home() {
         className={styles.header}
       >
         <div className={styles.container}>
-          <a href="/">
-            {/* <Logo style={{ height: logoHeight }} /> */}
-            <div style={{ height: logoHeight }}>LOGOG</div>
-          </a>
+          <div style={{ height: logoHeight }}>Animation</div>
         </div>
       </motion.header>
       <div className={styles.content}>
