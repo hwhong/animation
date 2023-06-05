@@ -1,6 +1,6 @@
 .root {
   /* background-color: #f7f7f8; */
-  border-radius: 8px;
+  border-radius: 12px;
   height: 350px;
   background-color: white;
   position: relative;
@@ -12,6 +12,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  border-radius: 12px;
   background-color: white;
 }
 

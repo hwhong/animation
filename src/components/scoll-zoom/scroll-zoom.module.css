@@ -10,7 +10,7 @@
   will-change: transform;
   width: 250px;
   transform: scale(2.2);
-  background-color: bisque;
+  background-color: black;
   border: 1px solid black;
   height: 100px;
 }

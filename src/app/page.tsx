@@ -12,6 +12,7 @@ import { ButtonGroupDemo } from "@/components/button-group/button-group-demo";
 import { Container } from "./container";
 import { ScrollZoom } from "@/components/scoll-zoom/scroll-zoom";
 import classNames from "classnames";
+import { FadeTransitionDemo } from "@/components/fade-transition/fade-transition-demo";
 
 let scrollThreshold = [0, 50];
 
@@ -82,8 +83,8 @@ export default function Home() {
       title: "Scroll Zoom",
     },
     {
-      node: <ButtonGroupDemo />,
-      title: "Button Group",
+      node: <FadeTransitionDemo />,
+      title: "Page Transition",
     },
     {
       node: <ButtonGroupDemo />,
