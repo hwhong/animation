@@ -11,6 +11,7 @@ import {
 import { Container } from "./container";
 import classNames from "classnames";
 import { ButtonGroupDemo, FadeTransitionDemo, ScrollZoom } from "@/components";
+import { ElevatedContainerDemo } from "@/components/elevated-container";
 
 let scrollThreshold = [0, 50];
 
@@ -85,10 +86,12 @@ export default function Home() {
       title: "Page Transition",
     },
     {
-      node: <ButtonGroupDemo />,
-      title: "Button Group",
+      node: <ElevatedContainerDemo />,
+      title: "Elevated Container",
     },
   ];
+
+  // MAKE THE APP APPLE LIKE
 
   return (
     <div className={styles.root}>
