@@ -16,9 +16,11 @@ export function ElevatedContainer({ children }: ElevatedContainerProps) {
         borderStyle: "solid",
       }}
       whileHover={{
-        borderWidth: "2px",
+        borderWidth: "16px",
         borderColor: "#000000",
         borderStyle: "solid",
+        marginTop: "-32px",
+        scale: 1,
       }}
     >
       {children}
