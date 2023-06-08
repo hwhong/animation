@@ -21,6 +21,7 @@ interface Content {
   title: string;
 }
 
+//https://codesandbox.io/s/github/samselikoff/fixed-header-teaser
 export default function Home() {
   let { scrollY } = useScroll();
   let scrollYOnDirectionChange = useRef(scrollY.get());
