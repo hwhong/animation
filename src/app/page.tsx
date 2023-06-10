@@ -13,6 +13,7 @@ import { Container } from "./container";
 import classNames from "classnames";
 import { ButtonGroupDemo, FadeTransitionDemo, ScrollZoom } from "@/components";
 import { ElevatedContainerDemo } from "@/components/elevated-container";
+import { ToggleContainerDemo } from "@/components/toggle-container";
 
 let scrollThreshold = [0, 50];
 
@@ -90,6 +91,10 @@ export default function Home() {
     {
       node: <ElevatedContainerDemo />,
       title: "Elevated Container",
+    },
+    {
+      node: <ToggleContainerDemo />,
+      title: "Toggle Container",
     },
   ];
 

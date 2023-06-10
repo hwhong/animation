@@ -1,0 +1,12 @@
+.plus {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+
+.active {
+  fill: white;
+}
+
+.root {
+  enable-background: new 0 0 39 39;
+}

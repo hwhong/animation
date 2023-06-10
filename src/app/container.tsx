@@ -17,7 +17,7 @@ export function Container({ children, className, title }: ContainerProps) {
     <motion.div
       className={styles.root}
       whileHover={{
-        scale: 1.01,
+        // scale: 1.01,
         boxShadow:
           "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
       }}
