@@ -40,7 +40,9 @@ export default function Home() {
     scrollThreshold,
     [1, 0.4]
   );
+  // let boxShadow = useTransform(pixelsScrolled, scrollThreshold, [0, 2]);
   let backgroundColorTemplate = useMotionTemplate`rgba(250 250 249 / ${backgroundOpacity})`;
+  // let boxShadowTemplate = useMotionTemplate`0 ${boxShadow}px 2px 0 rgb(0 0 0 / 0.05);`;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest < 0) return;
@@ -103,10 +105,32 @@ export default function Home() {
   return (
     <div className={styles.root}>
       <motion.header
-        style={{ height, backgroundColor: backgroundColorTemplate }}
+        style={{
+          height,
+          backgroundColor: backgroundColorTemplate,
+        }}
         className={styles.header}
       >
-        <div className={styles.container}>Animation</div>
+        <div className={styles.container}>
+          <div className={styles.headerText}>
+            <a>Animation Trove</a>
+            <a
+              className={styles.nameText}
+              href="https://github.com/hwhong"
+              target="_blank"
+            >
+              by Warren
+            </a>
+          </div>
+          <button
+            className={styles.githubButton}
+            onClick={() =>
+              window.open("https://github.com/hwhong/animation", "_blank")
+            }
+          >
+            View on Github
+          </button>
+        </div>
       </motion.header>
       <div className={styles.content}>
         {contents.map(({ node, title }, i) => (
