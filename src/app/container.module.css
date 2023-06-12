@@ -13,6 +13,8 @@
   width: 100%;
   border-radius: 12px;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 .contentWrapper {
@@ -21,4 +23,8 @@
   justify-content: center;
   flex: 1 1 auto;
   align-items: center;
+}
+
+.icon {
+  cursor: pointer;
 }

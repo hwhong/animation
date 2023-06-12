@@ -20,6 +20,7 @@ let scrollThreshold = [0, 50];
 interface Content {
   node: React.ReactNode;
   title: string;
+  codeLink: string;
 }
 
 //https://codesandbox.io/s/github/samselikoff/fixed-header-teaser
@@ -81,22 +82,32 @@ export default function Home() {
     {
       node: <ButtonGroupDemo />,
       title: "Button Group",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/button-group/button-group.tsx",
     },
     {
       node: <ScrollZoom />,
       title: "Scroll Zoom",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/scoll-zoom/scroll-zoom.tsx",
     },
     {
       node: <FadeTransitionDemo />,
       title: "Page Transition",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/fade-transition/fade-transition.tsx",
     },
     {
       node: <ElevatedContainerDemo />,
       title: "Elevated Container",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/elevated-container/elevated-container.tsx",
     },
     {
       node: <ToggleContainerDemo />,
       title: "Toggle Container",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
     },
   ];
 
@@ -133,10 +144,11 @@ export default function Home() {
         </div>
       </motion.header>
       <div className={styles.content}>
-        {contents.map(({ node, title }, i) => (
+        {contents.map(({ node, title, codeLink }, i) => (
           <Container
             title={title}
             key={title}
+            codeLink={codeLink}
             className={classNames({ [styles.scrollZoomOverride]: i === 1 })}
           >
             {node}
