@@ -14,6 +14,7 @@ import classNames from "classnames";
 import { ButtonGroupDemo, FadeTransitionDemo, ScrollZoom } from "@/components";
 import { ElevatedContainerDemo } from "@/components/elevated-container";
 import { ToggleContainerDemo } from "@/components/toggle-container";
+import { GradientBorderDemo } from "@/components/gradient-border";
 
 let scrollThreshold = [0, 50];
 
@@ -106,6 +107,12 @@ export default function Home() {
     {
       node: <ToggleContainerDemo />,
       title: "Toggle Container",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+    },
+    {
+      node: <GradientBorderDemo />,
+      title: "Gradient Border",
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
     },
