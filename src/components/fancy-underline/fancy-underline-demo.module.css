@@ -1,0 +1,17 @@
+.root {
+  background-color: #1d1d1d;
+  padding: 24px;
+  width: 200px;
+  gap: 20px;
+  border-radius: 4px;
+}
+
+.header {
+  color: white;
+  margin-bottom: 12px;
+}
+
+.description {
+  color: #a5a5a5;
+  margin-top: 20px;
+}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import {
   motion,
@@ -15,6 +15,11 @@ import { ButtonGroupDemo, FadeTransitionDemo, ScrollZoom } from "@/components";
 import { ElevatedContainerDemo } from "@/components/elevated-container";
 import { ToggleContainerDemo } from "@/components/toggle-container";
 import { GradientBorderDemo } from "@/components/gradient-border";
+import { FancyUnderlineDemo } from "@/components/fancy-underline";
+import { Modal } from "@/components/modal/modal";
+import fancyUnderlineGif from "../../public/underline.gif";
+import fadeGif from "../../public/fade.gif";
+import buttonGroupGif from "../../public/readcv.gif";
 
 let scrollThreshold = [0, 50];
 
@@ -22,6 +27,7 @@ interface Content {
   node: React.ReactNode;
   title: string;
   codeLink: string;
+  link?: any;
 }
 
 //https://codesandbox.io/s/github/samselikoff/fixed-header-teaser
@@ -31,6 +37,9 @@ export default function Home() {
   let lastPixelsScrolled = useRef<any>();
   let lastScrollDirection = useRef<string>("down");
   let pixelsScrolled = useMotionValue(0);
+  const [modalContentTitle, setModalContentTitle] = useState<
+    undefined | string
+  >("");
 
   // useTransform maps the second param on to the third param
   // [0, 50] ==> [100, 60]
@@ -85,6 +94,7 @@ export default function Home() {
       title: "Button Group",
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/button-group/button-group.tsx",
+      link: buttonGroupGif,
     },
     {
       node: <ScrollZoom />,
@@ -109,16 +119,24 @@ export default function Home() {
       title: "Toggle Container",
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+      link: fadeGif,
     },
+    // {
+    //   node: <GradientBorderDemo />,
+    //   title: "Gradient Border",
+    //   codeLink:
+    //     "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+    // },
     {
-      node: <GradientBorderDemo />,
-      title: "Gradient Border",
+      node: <FancyUnderlineDemo />,
+      title: "Fancy Underline",
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+      link: fancyUnderlineGif,
     },
   ];
 
-  // MAKE THE APP APPLE LIKE
+  const index = contents.findIndex((c) => c.title === modalContentTitle);
 
   return (
     <div className={styles.root}>
@@ -151,17 +169,26 @@ export default function Home() {
         </div>
       </motion.header>
       <div className={styles.content}>
-        {contents.map(({ node, title, codeLink }, i) => (
+        {contents.map(({ node, title, codeLink, link }, i) => (
           <Container
             title={title}
             key={title}
             codeLink={codeLink}
             className={classNames({ [styles.scrollZoomOverride]: i === 1 })}
+            onInspiredByClick={() => setModalContentTitle(title)}
+            link={link}
           >
             {node}
           </Container>
         ))}
       </div>
+      {modalContentTitle !== undefined && index !== undefined && (
+        <Modal
+          isVisible={!!modalContentTitle}
+          gifLink={contents[index]?.link}
+          onClose={() => setModalContentTitle(undefined)}
+        />
+      )}
     </div>
   );
 }

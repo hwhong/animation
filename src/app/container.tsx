@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import styles from "./container.module.css";
-import { Inter } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 const headerInter = Inter({ subsets: ["latin"], weight: "600" });
+const italicInter = Inter_Tight({
+  subsets: ["latin"],
+  weight: "300",
+  style: "italic",
+});
 
 interface ContainerProps {
   children: React.ReactNode;
   className?: string;
   codeLink: string;
   title: string;
+  link: any;
+  onInspiredByClick: () => void;
 }
 
 export function Container({
@@ -20,6 +27,8 @@ export function Container({
   codeLink,
   className,
   title,
+  link,
+  onInspiredByClick,
 }: ContainerProps) {
   const onExternalLinkClick = () => window.open(codeLink, "_blank");
   const [isIconHover, setIsIconHover] = useState(false);
@@ -47,6 +56,14 @@ export function Container({
       <div className={classNames(className, styles.contentWrapper)}>
         {children}
       </div>
+      {link && (
+        <span
+          className={classNames(styles.inspiredByText, italicInter.className)}
+          onClick={onInspiredByClick}
+        >
+          Inspired by
+        </span>
+      )}
     </motion.div>
   );
 }

@@ -1,0 +1,11 @@
+.root {
+  cursor: default;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.underline {
+  height: 2px;
+  background-color: white;
+}
