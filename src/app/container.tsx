@@ -61,7 +61,7 @@ export function Container({
           className={classNames(styles.inspiredByText, italicInter.className)}
           onClick={onInspiredByClick}
         >
-          Inspired by
+          Inspiration
         </span>
       )}
     </motion.div>

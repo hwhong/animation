@@ -32,7 +32,7 @@
 .inspiredByText {
   position: absolute;
   bottom: 0;
-  padding: 12px 24px;
+  margin: 12px 24px;
   cursor: pointer;
   color: #565656;
 }
