@@ -1,0 +1,23 @@
+.root {
+  --gap: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  gap: var(--gap);
+  user-select: none;
+}
+
+.text {
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}

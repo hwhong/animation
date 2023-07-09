@@ -20,6 +20,7 @@ import { Modal } from "@/components/modal/modal";
 import fancyUnderlineGif from "../../public/underline.gif";
 import fadeGif from "../../public/fade.gif";
 import buttonGroupGif from "../../public/readcv.gif";
+import { InfiniteLineDemo } from "@/components/infinite-line";
 
 let scrollThreshold = [0, 50];
 
@@ -133,6 +134,12 @@ export default function Home() {
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
       link: fancyUnderlineGif,
+    },
+    {
+      node: <InfiniteLineDemo />,
+      title: "Infinite Line",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
     },
   ];
 
