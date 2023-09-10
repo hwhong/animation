@@ -11,7 +11,12 @@ import {
 } from "framer-motion";
 import { Container } from "./container";
 import classNames from "classnames";
-import { ButtonGroupDemo, FadeTransitionDemo, ScrollZoom } from "@/components";
+import {
+  ButtonGroupDemo,
+  FadeTransitionDemo,
+  ScrollZoom,
+  ToastDemo,
+} from "@/components";
 import { ElevatedContainerDemo } from "@/components/elevated-container";
 import { ToggleContainerDemo } from "@/components/toggle-container";
 import { GradientBorderDemo } from "@/components/gradient-border";
@@ -147,6 +152,11 @@ export default function Home() {
       title: "Zoom In",
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+    },
+    {
+      node: <ToastDemo />,
+      title: "Toast",
+      codeLink: "",
     },
   ];
 
