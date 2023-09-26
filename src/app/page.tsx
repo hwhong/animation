@@ -165,7 +165,7 @@ export default function Home() {
       node: <FancyUnderlineAltDemo />,
       title: "Fancy Underline II",
       codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/toast/toast-root.tsx",
+        "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline-alt/fancy-underline-alt.tsx",
     },
   ];
 
