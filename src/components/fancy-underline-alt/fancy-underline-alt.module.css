@@ -1,0 +1,36 @@
+.root {
+  display: inline-block;
+  position: relative;
+  color: black;
+}
+
+.root::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  right: 50%;
+  background-color: black;
+  width: 0;
+  transition: width 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.root:hover::before {
+  width: 50%;
+}
+
+.root::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: black;
+  margin: 0 auto;
+  width: 0;
+  transition: width 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.root:hover::after {
+  width: 50%;
+}

@@ -28,6 +28,8 @@ import buttonGroupGif from "../../public/readcv.gif";
 import { InfiniteLineDemo } from "@/components/infinite-line";
 import { ZoomInDemo } from "@/components/zoom-in";
 
+import { FancyUnderlineAltDemo } from "@/components/fancy-underline-alt";
+
 let scrollThreshold = [0, 50];
 
 interface Content {
@@ -156,6 +158,12 @@ export default function Home() {
     {
       node: <ToastDemo />,
       title: "Toast",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/toast/toast-root.tsx",
+    },
+    {
+      node: <FancyUnderlineAltDemo />,
+      title: "Fancy Underline II",
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/toast/toast-root.tsx",
     },
