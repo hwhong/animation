@@ -17,6 +17,7 @@
   align-items: center;
   padding: 8px;
   position: absolute;
+  user-select: none;
 }
 
 .subComp {
