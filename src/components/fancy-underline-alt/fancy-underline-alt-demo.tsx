@@ -5,7 +5,7 @@ import styles from "./fancy-underline-alt-demo.module.css";
 export function FancyUnderlineAltDemo() {
   return (
     <div className={styles.root}>
-      <FancyUnderlineAlt>In and Out</FancyUnderlineAlt>
+      <FancyUnderlineAlt>Hover over me</FancyUnderlineAlt>
     </div>
   );
 }

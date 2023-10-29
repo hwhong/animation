@@ -15,6 +15,7 @@ import {
   ButtonGroupDemo,
   FadeTransitionDemo,
   ScrollZoom,
+  SpotifySlideDemo,
   ToastDemo,
 } from "@/components";
 import { ElevatedContainerDemo } from "@/components/elevated-container";
@@ -164,6 +165,12 @@ export default function Home() {
     {
       node: <FancyUnderlineAltDemo />,
       title: "Fancy Underline II",
+      codeLink:
+        "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline-alt/fancy-underline-alt.tsx",
+    },
+    {
+      node: <SpotifySlideDemo />,
+      title: "Spotify Slide Queue",
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline-alt/fancy-underline-alt.tsx",
     },
