@@ -131,30 +131,24 @@ export default function Home() {
         "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
       link: fadeGif,
     },
-    // {
-    //   node: <GradientBorderDemo />,
-    //   title: "Gradient Border",
-    //   codeLink:
-    //     "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
-    // },
     {
       node: <FancyUnderlineDemo />,
       title: "Fancy Underline",
       codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+        "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline/fancy-underline.tsx",
       link: fancyUnderlineGif,
     },
     {
       node: <InfiniteLineDemo />,
       title: "Infinite Line",
       codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+        "https://github.com/hwhong/animation/blob/main/src/components/infinite-line/infinite-line.tsx",
     },
     {
       node: <ZoomInDemo />,
       title: "Zoom In",
       codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
+        "https://github.com/hwhong/animation/blob/main/src/components/zoom-in/zoom-in.tsx",
     },
     {
       node: <ToastDemo />,
@@ -172,7 +166,7 @@ export default function Home() {
       node: <SpotifySlideDemo />,
       title: "Spotify Slide Queue",
       codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline-alt/fancy-underline-alt.tsx",
+        "https://github.com/hwhong/animation/blob/main/src/components/spotify-slide/spotify-slide.tsx",
     },
   ];
 
