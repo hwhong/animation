@@ -60,7 +60,7 @@ export function SpotifySlide() {
       >
         <div className={styles.albumCover} />
         <div className={styles.songMeta}>
-          <div className={styles.name}>Slide to Queue Song </div>
+          <div className={styles.name}>{"Slide to Queue Song -->"}</div>
           <div className={styles.artist}>
             <div className={styles.icon}></div>
             Spotify
