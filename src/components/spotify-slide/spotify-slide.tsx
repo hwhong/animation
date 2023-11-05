@@ -52,11 +52,14 @@ export function SpotifySlide() {
     >
       <div
         className={styles.subComp}
-        style={{ width: `${delta}px`, opacity: calculateOpacity() }}
+        style={{
+          width: `${delta}px`,
+          backgroundColor: `rgb(29, 185, 84,${calculateOpacity()})`,
+        }}
       />
       <div
         className={styles.mainComp}
-        style={{ right: `${Math.max(-delta, -320)}px` }}
+        style={{ transform: `translateX(${Math.min(delta, 320)}px)` }}
       >
         <div className={styles.albumCover} />
         <div className={styles.songMeta}>
