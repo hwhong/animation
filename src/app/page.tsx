@@ -162,12 +162,12 @@ export default function Home() {
       codeLink:
         "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline-alt/fancy-underline-alt.tsx",
     },
-    {
-      node: <SpotifySlideDemo />,
-      title: "Spotify Slide Queue",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/spotify-slide/spotify-slide.tsx",
-    },
+    // {
+    //   node: <SpotifySlideDemo />,
+    //   title: "Spotify Slide Queue",
+    //   codeLink:
+    //     "https://github.com/hwhong/animation/blob/main/src/components/spotify-slide/spotify-slide.tsx",
+    // },
   ];
 
   const index = contents.findIndex((c) => c.title === modalContentTitle);
