@@ -26,3 +26,16 @@
   color: #fff;
   background-color: black;
 }
+
+.background {
+  position: absolute;
+  background-color: #ededed;
+  top: 0;
+  bottom: 0;
+
+  padding: 0 12px;
+  line-height: 40px;
+
+  border: none;
+  border-radius: 24px;
+}
