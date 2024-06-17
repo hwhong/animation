@@ -30,6 +30,7 @@ import { InfiniteLineDemo } from "@/components/infinite-line";
 import { ZoomInDemo } from "@/components/zoom-in";
 
 import { FancyUnderlineAltDemo } from "@/components/fancy-underline-alt";
+import { Main } from "./main";
 
 let scrollThreshold = [0, 50];
 
@@ -171,8 +172,9 @@ export default function Home() {
   ];
 
   const index = contents.findIndex((c) => c.title === modalContentTitle);
+  const isNew = false;
 
-  return (
+  return isNew ? (
     <div className={styles.root}>
       <motion.header
         style={{
@@ -224,5 +226,7 @@ export default function Home() {
         />
       )}
     </div>
+  ) : (
+    <Main />
   );
 }
