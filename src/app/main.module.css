@@ -15,6 +15,26 @@
   border-radius: 20px;
   padding: 15px;
   font-size: 32px;
+  cursor: pointer;
 
   aspect-ratio: 1;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  background-color: white;
+
+  position: absolute;
+  inset: 20%;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  border-radius: 20px;
 }
