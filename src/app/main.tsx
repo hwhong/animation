@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import classNames from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
+import { One } from "@/v2/one";
 
 export function Main() {
   const [selectedItem, setSelectedItem] = useState<null | number>(null);
@@ -22,6 +23,8 @@ export function Main() {
   }, []);
 
   const onItemClick = (index: number) => setSelectedItem(index);
+
+  const components = [<></>, <One key={1} />];
 
   return (
     <>
@@ -44,21 +47,27 @@ export function Main() {
             initial={{ scale: 0.7 }}
             animate={{ scale: 1 }}
           >
-            {selectedItem}
+            {components[selectedItem]}
           </motion.div>
         )}
       </AnimatePresence>
       <div className={styles.root}>
-        {Array.from(Array(100).keys()).map((i) => (
-          <motion.div
-            key={i}
-            layoutId={`selectedIdx-${selectedItem}`}
-            className={classNames(styles.block, GeistMono.className)}
-            onClick={() => onItemClick(i)}
-          >
-            {i}
-          </motion.div>
-        ))}
+        {Array.from(Array(100).keys()).map((i) => {
+          const idx = i + 1;
+
+          return (
+            <motion.div
+              key={idx}
+              layoutId={`selectedIdx-${selectedItem}`}
+              className={classNames(styles.block, GeistMono.className, {
+                [styles.todo]: components.length - 1 < idx,
+              })}
+              onClick={() => onItemClick(idx)}
+            >
+              {idx}
+            </motion.div>
+          );
+        })}
       </div>
     </>
   );

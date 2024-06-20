@@ -37,4 +37,12 @@
   place-items: center;
   z-index: 10;
   border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  color: gray;
 }
