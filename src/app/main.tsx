@@ -9,7 +9,7 @@ import { One } from "@/v2/one";
 export function Main() {
   const [selectedItem, setSelectedItem] = useState<null | number>(null);
   const ref = useRef(null);
-  // useOnClickOutside(ref, () => setSelectedItem(null));
+  useOnClickOutside(ref, (e) => setSelectedItem(null));
 
   useEffect(() => {
     function onKeyDown(event: any) {
@@ -47,22 +47,25 @@ export function Main() {
             initial={{ scale: 0.7 }}
             animate={{ scale: 1 }}
           >
-            {components[selectedItem]}
+            {components[selectedItem] ?? selectedItem}
           </motion.div>
         )}
       </AnimatePresence>
       <div className={styles.root}>
         {Array.from(Array(100).keys()).map((i) => {
           const idx = i + 1;
+          /** Modal exists */
+          const isSelectionActive = selectedItem !== null;
 
           return (
             <motion.div
               key={idx}
               layoutId={`selectedIdx-${selectedItem}`}
+              onClick={() => !isSelectionActive && onItemClick(idx)}
               className={classNames(styles.block, GeistMono.className, {
-                [styles.todo]: components.length - 1 < idx,
+                [styles.unfinished]: components.length - 1 < idx,
+                [styles.activeSelection]: isSelectionActive,
               })}
-              onClick={() => onItemClick(idx)}
             >
               {idx}
             </motion.div>
