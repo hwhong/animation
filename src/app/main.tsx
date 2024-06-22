@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
 import { One } from "@/v2/one";
+import { Two } from "@/v2/two";
 
 export function Main() {
   const [selectedItem, setSelectedItem] = useState<null | number>(null);
@@ -24,7 +25,7 @@ export function Main() {
 
   const onItemClick = (index: number) => setSelectedItem(index);
 
-  const components = [<></>, <One key={1} />];
+  const components = [<></>, <One key={1} />, <Two key={2} />];
 
   return (
     <>
