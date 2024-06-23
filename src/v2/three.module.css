@@ -1,0 +1,34 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.refreshButton {
+  background: #f0efec;
+  color: inherit;
+  border: none;
+  padding: 4px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  border-radius: 4px;
+  padding-bottom: 0;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+
+.refreshButton:hover {
+  background: #d4d4d4;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.word {
+  font-size: 18px;
+}
