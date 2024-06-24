@@ -12,15 +12,21 @@ enum State {
 export function Four() {
   const [isOpen, setIsOpen] = useState<State>(State.CLOSE);
   const files = ["pdf", "svg", "jpg"];
+
+  /**
+   * Use custom prop to pass in dynamic value
+   */
   const variants = {
     [State.OPEN]: (index: number) => {
       if (index === 0) {
         return {};
       }
+      // TODO: calculate left value
+      const leftValue = index === 1 ? -22 : -8;
       return {
-        bottom: `${80 * index}px`,
-        transform: `rotate(${5 * index}deg)`,
-        left: `${1 * index}px`,
+        bottom: `${60 * index}px`,
+        transform: `rotate(${8 * index}deg)`,
+        left: `${leftValue}px`,
       };
     },
     [State.CLOSE]: {
