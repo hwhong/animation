@@ -7,6 +7,7 @@ import { useOnClickOutside } from "usehooks-ts";
 import { One } from "@/v2/one";
 import { Two } from "@/v2/two";
 import { Three } from "@/v2/three";
+import { Four } from "@/v2/four";
 
 export function Main() {
   const [selectedItem, setSelectedItem] = useState<null | number>(null);
@@ -31,6 +32,7 @@ export function Main() {
     <One key={1} />,
     <Two key={2} />,
     <Three key={3} />,
+    <Four key={4} />,
   ];
 
   return (
