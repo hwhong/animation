@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import styles from "./two.module.css";
+import styles from "./tab-underline.module.css";
 
 /**
  * Define layoutId on the element that animates,
  * so that it know where to transition to between renders.
  */
 
-export function Two() {
+export function TabUnderline() {
   const [selectedTab, setSelectedTab] = useState("Home");
   const tabs = ["Home", "About", "Projects"];
 

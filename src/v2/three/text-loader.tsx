@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import styles from "./three.module.css";
+import styles from "./text-loader.module.css";
 import RefreshIcon from "@mui/icons-material/Refresh";
 
 enum Status {
@@ -10,7 +10,7 @@ enum Status {
 
 const DELAY = 0.1;
 
-export function Three() {
+export function TextLoader() {
   const [update, setUpdate] = useState(Status.INITIAL);
 
   const TEXT =

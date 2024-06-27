@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import styles from "./four.module.css";
+import styles from "./file-expand.module.css";
 import classNames from "classnames";
 import { GeistMono } from "geist/font/mono";
 
@@ -9,7 +9,7 @@ enum State {
   CLOSE = "Close",
 }
 
-export function Four() {
+export function FileExpand() {
   const [isOpen, setIsOpen] = useState<State>(State.CLOSE);
   const files = ["pdf", "svg", "jpg"];
 
