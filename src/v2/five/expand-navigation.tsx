@@ -24,7 +24,7 @@ export function ExpandNavigation() {
       <motion.div
         className={styles.root}
         // Super hacky here
-        animate={{ height: hoverIdx === null ? "unset" : bounds.height }}
+        animate={{ height: hoverIdx === null ? "auto" : bounds.height }}
       >
         <div
           ref={ref}
