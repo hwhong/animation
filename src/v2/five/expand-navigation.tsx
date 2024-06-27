@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./expand-navigation.module.css";
 import useMeasure from "react-use-measure";
@@ -11,7 +11,6 @@ interface TabContent {
 export function ExpandNavigation() {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const [ref, bounds] = useMeasure();
-  const [rootRef, rootBounds] = useMeasure();
   const tabContent: TabContent[] = [
     { tabName: "London", content: <London /> },
     { tabName: "Barcelona", content: <></> },
@@ -23,8 +22,8 @@ export function ExpandNavigation() {
   return (
     <AnimatePresence initial={false}>
       <motion.div
-        ref={rootRef}
         className={styles.root}
+        initial={{ height: undefined }}
         animate={{ height: bounds.height }}
       >
         <div
@@ -34,15 +33,17 @@ export function ExpandNavigation() {
         >
           <ul className={styles.list}>
             {tabContent.map(({ tabName }, i) => (
-              <motion.li key={tabName} className={styles.tabItem}>
+              <li key={tabName} className={styles.tabItem}>
                 {/** Wrap text around span avoid doom-flickers */}
                 <span onMouseOver={() => setHoverIdx(i)}>{tabName}</span>
-              </motion.li>
+              </li>
             ))}
           </ul>
           {hoverIdx !== null && (
             <AnimatePresence>
               <motion.div
+                layout
+                layoutId="content"
                 className={styles.contentWrapper}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -86,4 +87,11 @@ function London() {
       <div className={styles.block} />
     </div>
   );
+}
+
+function useFirstRender() {
+  const ref = useRef(true);
+  const firstRender = ref.current;
+  ref.current = false;
+  return firstRender;
 }
