@@ -23,8 +23,8 @@ export function ExpandNavigation() {
     <AnimatePresence initial={false}>
       <motion.div
         className={styles.root}
-        initial={{ height: undefined }}
-        animate={{ height: bounds.height }}
+        // Super hacky here
+        animate={{ height: hoverIdx === null ? "unset" : bounds.height }}
       >
         <div
           ref={ref}
