@@ -1,0 +1,56 @@
+.root {
+  position: relative;
+}
+
+.wrapper {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #1b1b1b;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: help;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.img {
+  border-radius: 50%;
+}
+
+.hoverContent {
+  position: absolute;
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #23252a;
+  box-shadow: 0px 7px 32px rgba(0, 0, 0, 0.35);
+  padding: 10px 16px;
+  border-radius: 12px;
+  width: max-content;
+  left: -25%;
+  transform-origin: bottom center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: white;
+  font-size: 14px;
+}
+
+.subtext {
+  color: #919294;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #969799;
+  cursor: pointer;
+}
+.hoverIcon {
+  color: white;
+}

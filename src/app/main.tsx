@@ -10,6 +10,7 @@ import {
   TextLoader,
   FileExpand,
   ExpandNavigation,
+  Tooltip,
 } from "@/v2";
 
 export function Main() {
@@ -37,6 +38,7 @@ export function Main() {
     <TextLoader key={3} />,
     <FileExpand key={4} />,
     <ExpandNavigation key={5} />,
+    <Tooltip key={6} />,
   ];
 
   return (
