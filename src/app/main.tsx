@@ -5,12 +5,16 @@ import classNames from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
 import {
-  ButtonGroup,
+  ButtonGroupDemo,
   TabUnderline,
   TextLoader,
   FileExpand,
   ExpandNavigation,
   Tooltip,
+  FancyUnderlineDemo,
+  ToggleContainerDemo,
+  FancyUnderlineAltDemo,
+  InfiniteLineDemo,
 } from "@/v2";
 
 export function Main() {
@@ -33,12 +37,16 @@ export function Main() {
 
   const components = [
     <></>,
-    <ButtonGroup key={1} />,
+    <ButtonGroupDemo key={1} />,
     <TabUnderline key={2} />,
     <TextLoader key={3} />,
     <FileExpand key={4} />,
     <ExpandNavigation key={5} />,
     <Tooltip key={6} />,
+    <FancyUnderlineDemo key={7} />,
+    <ToggleContainerDemo key={8} />,
+    <FancyUnderlineAltDemo key={9} />,
+    <InfiniteLineDemo key={10} />,
   ];
 
   return (

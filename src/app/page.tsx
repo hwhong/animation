@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./page.module.css";
 import {
   motion,
@@ -9,27 +9,6 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { Container } from "./container";
-import classNames from "classnames";
-import {
-  ButtonGroupDemo,
-  FadeTransitionDemo,
-  ScrollZoom,
-  SpotifySlideDemo,
-  ToastDemo,
-} from "@/components";
-import { ElevatedContainerDemo } from "@/components/elevated-container";
-import { ToggleContainerDemo } from "@/components/toggle-container";
-import { GradientBorderDemo } from "@/components/gradient-border";
-import { FancyUnderlineDemo } from "@/components/fancy-underline";
-import { Modal } from "@/components/modal/modal";
-import fancyUnderlineGif from "../../public/underline.gif";
-import fadeGif from "../../public/fade.gif";
-import buttonGroupGif from "../../public/readcv.gif";
-import { InfiniteLineDemo } from "@/components/infinite-line";
-import { ZoomInDemo } from "@/components/zoom-in";
-
-import { FancyUnderlineAltDemo } from "@/components/fancy-underline-alt";
 import { Main } from "./main";
 
 let scrollThreshold = [0, 50];
@@ -48,9 +27,6 @@ export default function Home() {
   let lastPixelsScrolled = useRef<any>();
   let lastScrollDirection = useRef<string>("down");
   let pixelsScrolled = useMotionValue(0);
-  const [modalContentTitle, setModalContentTitle] = useState<
-    undefined | string
-  >("");
 
   // useTransform maps the second param on to the third param
   // [0, 50] ==> [100, 60]
@@ -99,79 +75,6 @@ export default function Home() {
     lastScrollDirection.current = scrollDirection;
   });
 
-  const contents: Content[] = [
-    {
-      node: <ButtonGroupDemo />,
-      title: "Button Group",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/button-group/button-group.tsx",
-      link: buttonGroupGif,
-    },
-    {
-      node: <ScrollZoom />,
-      title: "Scroll Zoom",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/scoll-zoom/scroll-zoom.tsx",
-    },
-    {
-      node: <FadeTransitionDemo />,
-      title: "Page Transition",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/fade-transition/fade-transition.tsx",
-    },
-    {
-      node: <ElevatedContainerDemo />,
-      title: "Elevated Container",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/elevated-container/elevated-container.tsx",
-    },
-    {
-      node: <ToggleContainerDemo />,
-      title: "Toggle Container",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/toggle-container/toggle-container.tsx",
-      link: fadeGif,
-    },
-    {
-      node: <FancyUnderlineDemo />,
-      title: "Fancy Underline",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline/fancy-underline.tsx",
-      link: fancyUnderlineGif,
-    },
-    {
-      node: <InfiniteLineDemo />,
-      title: "Infinite Line",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/infinite-line/infinite-line.tsx",
-    },
-    {
-      node: <ZoomInDemo />,
-      title: "Zoom In",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/zoom-in/zoom-in.tsx",
-    },
-    {
-      node: <ToastDemo />,
-      title: "Toast",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/toast/toast-root.tsx",
-    },
-    {
-      node: <FancyUnderlineAltDemo />,
-      title: "Fancy Underline II",
-      codeLink:
-        "https://github.com/hwhong/animation/blob/main/src/components/fancy-underline-alt/fancy-underline-alt.tsx",
-    },
-    // {
-    //   node: <SpotifySlideDemo />,
-    //   title: "Spotify Slide Queue",
-    //   codeLink:
-    //     "https://github.com/hwhong/animation/blob/main/src/components/spotify-slide/spotify-slide.tsx",
-    // },
-  ];
-
-  const index = contents.findIndex((c) => c.title === modalContentTitle);
   const isNew = false;
 
   return isNew ? (
@@ -204,27 +107,6 @@ export default function Home() {
           </button>
         </div>
       </motion.header>
-      <div className={styles.content}>
-        {contents.map(({ node, title, codeLink, link }, i) => (
-          <Container
-            title={title}
-            key={title}
-            codeLink={codeLink}
-            className={classNames({ [styles.scrollZoomOverride]: i === 1 })}
-            onInspiredByClick={() => setModalContentTitle(title)}
-            link={link}
-          >
-            {node}
-          </Container>
-        ))}
-      </div>
-      {modalContentTitle !== undefined && index !== undefined && (
-        <Modal
-          isVisible={!!modalContentTitle}
-          gifLink={contents[index]?.link}
-          onClose={() => setModalContentTitle(undefined)}
-        />
-      )}
     </div>
   ) : (
     <Main />
