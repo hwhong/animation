@@ -15,6 +15,7 @@ import {
   ToggleContainerDemo,
   FancyUnderlineAltDemo,
   InfiniteLineDemo,
+  DragCarousel,
 } from "@/v2";
 
 export function Main() {
@@ -47,6 +48,7 @@ export function Main() {
     <ToggleContainerDemo key={8} />,
     <FancyUnderlineAltDemo key={9} />,
     <InfiniteLineDemo key={10} />,
+    <DragCarousel key={11} />,
   ];
 
   return (

@@ -8,3 +8,4 @@ export { FancyUnderlineDemo } from "./7/fancy-underline-demo";
 export { ToggleContainerDemo } from "./8/toggle-container-demo";
 export { FancyUnderlineAltDemo } from "./9/fancy-underline-alt-demo";
 export { InfiniteLineDemo } from "./10/infinite-line-demo";
+export { DragCarousel } from "./11/drag-carousel";
