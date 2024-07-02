@@ -1,0 +1,42 @@
+.root {
+  background-color: white;
+  padding: 4px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.gradient {
+  background: linear-gradient(180deg, #cec7ea 0%, #c8e1e7 50%, #fdffc4 100%);
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  scale: 4;
+
+  animation: spin 5s linear infinite;
+}
+
+.content {
+  width: 150px;
+  height: 50px;
+  background: #eeeeee;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 3;
+}

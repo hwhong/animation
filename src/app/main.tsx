@@ -16,6 +16,7 @@ import {
   FancyUnderlineAltDemo,
   InfiniteLineDemo,
   DragCarousel,
+  BorderGradient,
 } from "@/v2";
 
 export function Main() {
@@ -49,6 +50,7 @@ export function Main() {
     <FancyUnderlineAltDemo key={9} />,
     <InfiniteLineDemo key={10} />,
     <DragCarousel key={11} />,
+    <BorderGradient key={12} />,
   ];
 
   return (
