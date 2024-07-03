@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  border: 1px solid black;
+}
+
+.block {
+  min-width: 200px;
+  height: 100%;
+  position: relative;
+}

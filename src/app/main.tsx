@@ -17,6 +17,7 @@ import {
   InfiniteLineDemo,
   DragCarousel,
   BorderGradient,
+  ScrollAppear,
 } from "@/v2";
 
 export function Main() {
@@ -51,6 +52,7 @@ export function Main() {
     <InfiniteLineDemo key={10} />,
     <DragCarousel key={11} />,
     <BorderGradient key={12} />,
+    <ScrollAppear key={13} />,
   ];
 
   return (
