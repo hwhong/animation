@@ -1,0 +1,17 @@
+.root {
+  width: 70%;
+  height: 80%;
+  overflow: auto;
+  background-color: #d4d4d4;
+}
+
+.scrollContent {
+  height: 800px;
+  width: auto;
+  background-color: #757575;
+  margin: 100px 100px 0 100px;
+  color: #d4d4d4;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+}

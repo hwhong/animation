@@ -18,6 +18,7 @@ import {
   DragCarousel,
   BorderGradient,
   ScrollAppear,
+  ScrollCover,
 } from "@/v2";
 
 export function Main() {
@@ -53,6 +54,7 @@ export function Main() {
     <DragCarousel key={11} />,
     <BorderGradient key={12} />,
     <ScrollAppear key={13} />,
+    <ScrollCover key={14} />,
   ];
 
   return (
