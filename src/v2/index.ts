@@ -12,3 +12,4 @@ export { DragCarousel } from "./11/drag-carousel";
 export { BorderGradient } from "./12/border-gradient";
 export { ScrollAppear } from "./13/scroll-appear";
 export { ScrollCover } from "./14/scroll-cover";
+export { ToggleCard } from "./15/toggle-card";

@@ -19,6 +19,7 @@ import {
   BorderGradient,
   ScrollAppear,
   ScrollCover,
+  ToggleCard,
 } from "@/v2";
 
 export function Main() {
@@ -39,6 +40,8 @@ export function Main() {
 
   const onItemClick = (index: number) => setSelectedItem(index);
 
+  const needMoreWork = [5, 15];
+
   const components = [
     <></>,
     <ButtonGroupDemo key={1} />,
@@ -55,6 +58,7 @@ export function Main() {
     <BorderGradient key={12} />,
     <ScrollAppear key={13} />,
     <ScrollCover key={14} />,
+    <ToggleCard key={15} />,
   ];
 
   return (
