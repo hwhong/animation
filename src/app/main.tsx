@@ -21,6 +21,7 @@ import {
   ScrollCover,
   ToggleCard,
   MacDock,
+  LoadButton,
 } from "@/v2";
 
 export function Main() {
@@ -61,6 +62,7 @@ export function Main() {
     <ScrollCover key={14} />,
     <ToggleCard key={15} />,
     <MacDock key={16} />,
+    <LoadButton key={17} />,
   ];
 
   return (
