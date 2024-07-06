@@ -1,5 +1,20 @@
 :root {
-  --blue: #1e90ff;
+  --gray100: #f4f4f4;
+  --gray300: #d4d4d4;
+  --gray500: #b4b4b4;
+  --gray700: #747474;
+  --gray900: #343434;
+
+  --size0: 4px;
+  --size1: 8px;
+  --size2: 12px;
+  --size3: 16px;
+  --size4: 20px;
+  --size5: 24px;
+  --size6: 32px;
+  --size7: 36px;
+  --size8: 40px;
+  --size9: 48px;
 }
 
 * {

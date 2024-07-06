@@ -1,0 +1,23 @@
+.root {
+  width: auto;
+  height: auto;
+  display: flex;
+  max-height: 58px;
+  position: relative;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: var(--size1);
+  padding: var(--size1);
+  border-radius: var(--size4);
+  background-color: var(--gray100);
+}
+
+.item {
+  cursor: pointer;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: var(--size8);
+  height: var(--size8);
+  background-color: var(--gray500);
+}

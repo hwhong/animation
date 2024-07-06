@@ -20,6 +20,7 @@ import {
   ScrollAppear,
   ScrollCover,
   ToggleCard,
+  MacDock,
 } from "@/v2";
 
 export function Main() {
@@ -59,6 +60,7 @@ export function Main() {
     <ScrollAppear key={13} />,
     <ScrollCover key={14} />,
     <ToggleCard key={15} />,
+    <MacDock key={16} />,
   ];
 
   return (
