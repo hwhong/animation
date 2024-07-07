@@ -1,55 +1,45 @@
 import React, { useState } from "react";
-// import styles from "./lined-progress.module.css";
+import styles from "./lined-progress.module.css";
 import { motion } from "framer-motion";
 
 const LENGTH = 5;
 export const RUNTIME = 0.3;
-const styles = {
-  root: "",
-  unitRoot: "",
-  edgeWrapper: "",
-  inactiveEdge: "",
-  activeEdge: "",
-  node: "",
-};
+// const styles = {
+//   root: "",
+//   unitRoot: "",
+//   edgeWrapper: "",
+//   inactiveEdge: "",
+//   activeEdge: "",
+//   node: "",
+// };
 
 export function LinedProgress() {
   const [activeNodes, setActiveNodes] = useState<boolean[]>(
     new Array(LENGTH).fill(false)
   );
-  const [exitNodes, setExitNodes] = useState<number[]>([]);
+  // const [exitNodes, setExitNodes] = useState<number[]>([]);
+  const [delays, setDelays] = useState<(number | undefined)[]>([]);
 
   const onNodeClicked = (idx: number) => {
     const isNodeActive = activeNodes[idx];
-    const value = activeNodes;
+    const old = [...activeNodes];
 
     if (isNodeActive) {
       // need to
       // 1. immediately remove if previous nodes are lighted
       // 2. cannot exist a middle one
-      const exits = [];
-
-      //   const isNextNodeActive = activeNodes[idx + 1];
-      //   if (isNextNodeActive) {
-      //     for (let i = idx; i < LENGTH - 1; i++) {
-      //       exits.push(i);
-      //     }
-      //     setExitNodes([...exits]);
-      //   }
 
       for (let i = idx + 1; i < LENGTH; i++) {
-        exits.push(i);
-
-        value[i] = false;
+        activeNodes[i] = false;
       }
-      setExitNodes([...exits]);
     } else {
       for (let i = 0; i <= idx; i++) {
-        value[i] = true;
+        activeNodes[i] = true;
       }
     }
 
-    setActiveNodes([...value]);
+    setDelays(calculateDelay(idx, old));
+    setActiveNodes([...activeNodes]);
   };
 
   return (
@@ -60,7 +50,8 @@ export function LinedProgress() {
           index={idx}
           isActive={activeNodes[idx]}
           onNodeClicked={() => onNodeClicked(idx)}
-          exit={exitNodes.includes(idx)}
+          // exit={exitNodes.includes(idx)}
+          delay={delays[idx]}
         />
       ))}
     </div>
@@ -69,9 +60,9 @@ export function LinedProgress() {
 
 interface LinedUnitProps {
   index: number;
-  exit: boolean;
+  // exit: boolean;
   isActive: boolean;
-
+  delay: number | undefined;
   onNodeClicked: () => void;
 }
 
@@ -87,9 +78,10 @@ const nodeVariants = {
 
 export function LinedUnit({
   isActive,
-  exit,
+  // exit,
   onNodeClicked,
   index,
+  delay,
 }: LinedUnitProps) {
   return (
     <div className={styles.unitRoot}>
@@ -103,7 +95,7 @@ export function LinedUnit({
           transition={{
             duration: RUNTIME,
             ease: "easeInOut",
-            delay: exit ? undefined : index * 1,
+            delay: delay ?? 0,
           }}
         />
       </div>
@@ -113,7 +105,7 @@ export function LinedUnit({
         onClick={onNodeClicked}
         animate={isActive ? "active" : "inactive"}
         variants={nodeVariants}
-        transition={{ delay: exit ? undefined : index * 1 + RUNTIME }}
+        transition={{ delay: delay ? delay + RUNTIME : 0 }}
       >
         {index}
       </motion.div>
@@ -146,6 +138,6 @@ export function calculateDelay(idx: number, activeNodes: boolean[]) {
   for (let i = idx; i < activeNodes.length - 1; i++) {
     result.push(undefined);
   }
-  console.log(result);
+
   return result;
 }
