@@ -4,6 +4,7 @@ import {
   AnimatePresence,
   motion,
   useMotionValue,
+  useSpring,
   useTransform,
 } from "framer-motion";
 
@@ -75,14 +76,17 @@ function DockItem({ left, isHover }: DockItemProps) {
     }
   }, [isHover, motionValue]);
 
-  const multiplier = useTransform(
+  const transformedValue = useTransform(
     motionValue,
     [0, BOUNDARY],
     [80, DEFAULT_DIMENSION]
   );
-  const value = useTransform(multiplier, (value) =>
-    isHover ? `${value}px` : `${DEFAULT_DIMENSION}px`
-  );
+  // useSpring creates a motion value that will animate to its latest target with a spring animation.
+  const value = useSpring(transformedValue, {
+    damping: 15,
+    mass: 0.1,
+    stiffness: 200,
+  });
 
   return (
     <motion.div

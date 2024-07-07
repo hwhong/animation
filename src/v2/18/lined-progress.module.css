@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+}
+
+.unitRoot {
+  display: flex;
+  align-items: center;
+}
+
+.edgeWrapper {
+  display: flex;
+  width: 100px;
+  height: 8px;
+}
+
+.inactiveEdge {
+  background-color: var(--gray100);
+  width: 100%;
+  height: 8px;
+}
+
+.activeEdge {
+  background-color: var(--gray300);
+  position: absolute;
+  height: 8px;
+}
+
+.node {
+  width: var(--size7);
+  height: var(--size7);
+  border-radius: 50%;
+  background-color: var(--gray500);
+}

@@ -22,6 +22,7 @@ import {
   ToggleCard,
   MacDock,
   LoadButton,
+  LinedProgress,
 } from "@/v2";
 
 export function Main() {
@@ -63,6 +64,7 @@ export function Main() {
     <ToggleCard key={15} />,
     <MacDock key={16} />,
     <LoadButton key={17} />,
+    <LinedProgress key={18} />,
   ];
 
   return (
