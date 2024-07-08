@@ -3,21 +3,12 @@ import styles from "./lined-progress.module.css";
 import { motion } from "framer-motion";
 
 const LENGTH = 5;
-export const RUNTIME = 0.3;
-// const styles = {
-//   root: "",
-//   unitRoot: "",
-//   edgeWrapper: "",
-//   inactiveEdge: "",
-//   activeEdge: "",
-//   node: "",
-// };
+export const RUNTIME = 0.2;
 
 export function LinedProgress() {
   const [activeNodes, setActiveNodes] = useState<boolean[]>(
     new Array(LENGTH).fill(false)
   );
-  // const [exitNodes, setExitNodes] = useState<number[]>([]);
   const [delays, setDelays] = useState<(number | undefined)[]>([]);
 
   const onNodeClicked = (idx: number) => {
@@ -25,10 +16,7 @@ export function LinedProgress() {
     const old = [...activeNodes];
 
     if (isNodeActive) {
-      // need to
-      // 1. immediately remove if previous nodes are lighted
-      // 2. cannot exist a middle one
-
+      // TODO: Better animation for node removal.
       for (let i = idx + 1; i < LENGTH; i++) {
         activeNodes[i] = false;
       }
@@ -45,12 +33,13 @@ export function LinedProgress() {
 
   return (
     <div className={styles.root}>
+      <motion.div className={styles.firstNode} />
       {Array.from(Array(LENGTH).keys()).map((idx) => (
         <LinedUnit
           key={idx}
+          delay={delays[idx]}
           isActive={activeNodes[idx]}
           onNodeClicked={() => onNodeClicked(idx)}
-          delay={delays[idx]}
         />
       ))}
     </div>
@@ -74,15 +63,17 @@ const nodeVariants = {
 };
 
 export function LinedUnit({ isActive, delay, onNodeClicked }: LinedUnitProps) {
+  const status = isActive ? "active" : "inactive";
+
   return (
     <div className={styles.unitRoot}>
       <div className={styles.edgeWrapper}>
         <div className={styles.inactiveEdge} />
         <motion.div
           initial={false}
-          className={styles.activeEdge}
-          animate={isActive ? "active" : "inactive"}
+          animate={status}
           variants={variants}
+          className={styles.activeEdge}
           transition={{
             duration: RUNTIME,
             ease: "easeInOut",
@@ -92,12 +83,12 @@ export function LinedUnit({ isActive, delay, onNodeClicked }: LinedUnitProps) {
       </div>
       <motion.div
         initial={false}
+        animate={status}
         className={styles.node}
         onClick={onNodeClicked}
         variants={nodeVariants}
-        animate={isActive ? "active" : "inactive"}
         transition={{ delay: delay ? delay + RUNTIME : 0 }}
-      ></motion.div>
+      />
     </div>
   );
 }

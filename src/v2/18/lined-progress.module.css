@@ -29,4 +29,12 @@
   width: var(--size7);
   height: var(--size7);
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.firstNode {
+  width: var(--size7);
+  height: var(--size7);
+  border-radius: 50%;
+  background-color: #747474;
 }
