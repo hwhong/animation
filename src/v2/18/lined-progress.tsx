@@ -32,13 +32,14 @@ export function LinedProgress() {
       for (let i = idx + 1; i < LENGTH; i++) {
         activeNodes[i] = false;
       }
+      setDelays([]);
     } else {
       for (let i = 0; i <= idx; i++) {
         activeNodes[i] = true;
       }
+      setDelays(calculateDelay(idx, old));
     }
 
-    setDelays(calculateDelay(idx, old));
     setActiveNodes([...activeNodes]);
   };
 
@@ -47,10 +48,8 @@ export function LinedProgress() {
       {Array.from(Array(LENGTH).keys()).map((idx) => (
         <LinedUnit
           key={idx}
-          index={idx}
           isActive={activeNodes[idx]}
           onNodeClicked={() => onNodeClicked(idx)}
-          // exit={exitNodes.includes(idx)}
           delay={delays[idx]}
         />
       ))}
@@ -59,8 +58,6 @@ export function LinedProgress() {
 }
 
 interface LinedUnitProps {
-  index: number;
-  // exit: boolean;
   isActive: boolean;
   delay: number | undefined;
   onNodeClicked: () => void;
@@ -72,24 +69,18 @@ const variants = {
 };
 
 const nodeVariants = {
-  inactive: { opacity: 0.5 },
-  active: { opacity: 1 },
+  inactive: { backgroundColor: "#d4d4d4" },
+  active: { backgroundColor: "#747474" },
 };
 
-export function LinedUnit({
-  isActive,
-  // exit,
-  onNodeClicked,
-  index,
-  delay,
-}: LinedUnitProps) {
+export function LinedUnit({ isActive, delay, onNodeClicked }: LinedUnitProps) {
   return (
     <div className={styles.unitRoot}>
       <div className={styles.edgeWrapper}>
         <div className={styles.inactiveEdge} />
         <motion.div
-          className={styles.activeEdge}
           initial={false}
+          className={styles.activeEdge}
           animate={isActive ? "active" : "inactive"}
           variants={variants}
           transition={{
@@ -103,12 +94,10 @@ export function LinedUnit({
         initial={false}
         className={styles.node}
         onClick={onNodeClicked}
-        animate={isActive ? "active" : "inactive"}
         variants={nodeVariants}
+        animate={isActive ? "active" : "inactive"}
         transition={{ delay: delay ? delay + RUNTIME : 0 }}
-      >
-        {index}
-      </motion.div>
+      ></motion.div>
     </div>
   );
 }
