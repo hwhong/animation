@@ -1,0 +1,39 @@
+.root {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  position: relative;
+}
+
+.block {
+  border: 2px solid var(--gray300);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: var(--size2);
+  cursor: pointer;
+}
+
+.topLeft {
+  top: 0;
+  left: 0;
+}
+
+.topRight {
+  top: 0;
+  right: 0;
+}
+
+.bottomLeft {
+  bottom: 0;
+  left: 0;
+}
+
+.bottomRight {
+  bottom: 0;
+  right: 0;
+}
+
+.moveBlock {
+  background-color: var(--gray700);
+}

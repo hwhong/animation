@@ -16,3 +16,5 @@ export { ToggleCard } from "./15/toggle-card";
 export { MacDock } from "./16/mac-dock";
 export { LoadButton } from "./17/load-button";
 export { LinedProgress } from "./18/lined-progress";
+export { Counter } from "./19/counter";
+export { LayoutIdTransition } from "./20/layoutId-transitions";

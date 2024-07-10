@@ -23,6 +23,8 @@ import {
   MacDock,
   LoadButton,
   LinedProgress,
+  Counter,
+  LayoutIdTransition,
 } from "@/v2";
 
 export function Main() {
@@ -65,6 +67,8 @@ export function Main() {
     <MacDock key={16} />,
     <LoadButton key={17} />,
     <LinedProgress key={18} />,
+    <Counter key={19} />,
+    <LayoutIdTransition key={20} />,
   ];
 
   return (
