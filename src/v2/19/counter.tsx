@@ -42,7 +42,6 @@ export function Number({ number }: NumberProps) {
   return (
     <motion.div
       className={styles.number}
-      key={number}
       transition={{ type: "spring", duration: 0.3, bounce: 0 }}
       initial={{ opacity: 0, y: -25 }}
       animate={{ opacity: 1, y: 0 }}

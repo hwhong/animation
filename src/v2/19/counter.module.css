@@ -1,25 +1,30 @@
 .root {
   display: flex;
   align-items: center;
+  background-color: var(--gray100);
+  border-radius: var(--size3);
+  padding: 0 var(--size8);
 }
 
 .counter {
   display: flex;
   padding: var(--size8);
-  font-size: 48px;
+  font-size: var(--size9);
 }
 
 .number {
-  width: 30px;
+  width: var(--size6);
+  user-select: none;
 }
 
 .button {
-  width: 50px;
-  height: 50px;
+  width: var(--size9);
+  height: var(--size9);
   border: 1px solid var(--gray100);
   border-radius: var(--size3);
   background-color: var(--gray300);
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
