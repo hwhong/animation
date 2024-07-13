@@ -17,7 +17,7 @@ export function ToggleCard() {
       </button>
       <motion.div
         layout
-        animate={{ height: bounds.height ? bounds.height : null }}
+        animate={{ height: bounds.height ? bounds.height : undefined }}
         className={styles.content}
       >
         <div ref={elementRef} className={styles.inner}>
