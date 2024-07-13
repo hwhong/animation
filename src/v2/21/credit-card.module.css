@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  width: 500px;
+  height: 100%;
+  justify-content: center;
+  align-items: end;
+  bottom: var(--size8);
+  position: relative;
+}
+
+.wallet {
+  width: 50%;
+  height: 30%;
+  border: 1px solid var(--gray100);
+  background-color: var(--gray300);
+  border-radius: var(--size5);
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 70%;
+  height: 80%;
+  background-color: var(--blue);
+  border-radius: var(--size2);
+}

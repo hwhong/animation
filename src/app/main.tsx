@@ -25,6 +25,7 @@ import {
   LinedProgress,
   Counter,
   LayoutIdTransition,
+  CreditCard,
 } from "@/v2";
 
 export function Main() {
@@ -69,6 +70,7 @@ export function Main() {
     <LinedProgress key={18} />,
     <Counter key={19} />,
     <LayoutIdTransition key={20} />,
+    <CreditCard key={21} />,
   ];
 
   return (
