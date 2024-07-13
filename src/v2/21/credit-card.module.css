@@ -11,8 +11,6 @@
 .wallet {
   width: 50%;
   height: 30%;
-  border: 1px solid var(--gray100);
-  background-color: var(--gray300);
   border-radius: var(--size5);
   position: relative;
 }
@@ -28,4 +26,24 @@
   height: 80%;
   background-color: var(--blue);
   border-radius: var(--size2);
+  display: flex;
+  padding: var(--size2);
+}
+
+.frontWallet {
+  background-color: var(--gray300);
+  border-radius: var(--size5);
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  cursor: pointer;
+  padding: var(--size4);
+}
+
+.walletHeader {
+  width: 100%;
+  height: var(--size4);
+  border-radius: var(--size2);
+  opacity: 0.3;
+  background-color: white;
 }

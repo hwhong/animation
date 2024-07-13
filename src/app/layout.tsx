@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { GeistMono } from "geist/font/mono";
 
 const inter = Inter({ subsets: ["latin"], preload: true });
 
@@ -15,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={GeistMono.className}>{children}</body>
       <Analytics />
     </html>
   );
