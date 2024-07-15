@@ -26,6 +26,7 @@ import {
   Counter,
   LayoutIdTransition,
   CreditCard,
+  ColorGradient,
 } from "@/v2";
 
 export function Main() {
@@ -71,6 +72,7 @@ export function Main() {
     <Counter key={19} />,
     <LayoutIdTransition key={20} />,
     <CreditCard key={21} />,
+    <ColorGradient key={22} />,
   ];
 
   return (

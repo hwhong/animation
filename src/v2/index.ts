@@ -19,3 +19,4 @@ export { LinedProgress } from "./18/lined-progress";
 export { Counter } from "./19/counter";
 export { LayoutIdTransition } from "./20/layoutId-transitions";
 export { CreditCard } from "./21/credit-card";
+export { ColorGradient } from "./22/color-gradient";
