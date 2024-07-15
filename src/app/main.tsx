@@ -27,6 +27,7 @@ import {
   LayoutIdTransition,
   CreditCard,
   ColorGradient,
+  CursorGradient,
 } from "@/v2";
 
 export function Main() {
@@ -73,6 +74,7 @@ export function Main() {
     <LayoutIdTransition key={20} />,
     <CreditCard key={21} />,
     <ColorGradient key={22} />,
+    <CursorGradient key={23} />,
   ];
 
   return (

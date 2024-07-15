@@ -20,3 +20,4 @@ export { Counter } from "./19/counter";
 export { LayoutIdTransition } from "./20/layoutId-transitions";
 export { CreditCard } from "./21/credit-card";
 export { ColorGradient } from "./22/color-gradient";
+export { CursorGradient } from "./23/cursor-gradient";
