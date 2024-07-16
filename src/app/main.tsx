@@ -28,6 +28,7 @@ import {
   CreditCard,
   ColorGradient,
   CursorGradient,
+  Tilt,
 } from "@/v2";
 
 export function Main() {
@@ -75,6 +76,7 @@ export function Main() {
     <CreditCard key={21} />,
     <ColorGradient key={22} />,
     <CursorGradient key={23} />,
+    <Tilt key={24} />,
   ];
 
   return (

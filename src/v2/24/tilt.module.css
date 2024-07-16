@@ -1,0 +1,6 @@
+.root {
+  width: 50%;
+  height: 50%;
+  border: 1px solid var(--gray500);
+  border-radius: var(--size3);
+}
