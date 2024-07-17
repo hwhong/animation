@@ -50,3 +50,7 @@
 .unfinished {
   color: gray;
 }
+
+.needMoreWork {
+  background-color: var(--yellow);
+}

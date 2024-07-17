@@ -49,7 +49,7 @@ export function Main() {
 
   const onItemClick = (index: number) => setSelectedItem(index);
 
-  const needMoreWork = [5, 15];
+  const needMoreWork = [5, 15, 17, 24];
 
   const components = [
     <></>,
@@ -118,6 +118,7 @@ export function Main() {
               className={classNames(styles.block, GeistMono.className, {
                 [styles.unfinished]: components.length - 1 < idx,
                 [styles.activeSelection]: isSelectionActive,
+                [styles.needMoreWork]: needMoreWork.includes(idx),
               })}
             >
               {idx}
