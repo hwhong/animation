@@ -29,6 +29,7 @@ import {
   ColorGradient,
   CursorGradient,
   Tilt,
+  Input,
 } from "@/v2";
 
 export function Main() {
@@ -77,6 +78,7 @@ export function Main() {
     <ColorGradient key={22} />,
     <CursorGradient key={23} />,
     <Tilt key={24} />,
+    <Input key={25} />,
   ];
 
   return (

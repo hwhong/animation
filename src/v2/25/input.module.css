@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions {
+  height: 100px;
+  width: 100px;
+  background-color: aqua;
+}
