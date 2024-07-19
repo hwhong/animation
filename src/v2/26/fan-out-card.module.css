@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardRoot {
+  padding: var(--size8);
+  width: 50%;
+  height: 80%;
+}

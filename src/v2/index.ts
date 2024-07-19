@@ -23,3 +23,4 @@ export { ColorGradient } from "./22/color-gradient";
 export { CursorGradient } from "./23/cursor-gradient";
 export { Tilt } from "./24/tilt";
 export { Input } from "./25/input";
+export { FanOutCards } from "./26/fan-out-cards";

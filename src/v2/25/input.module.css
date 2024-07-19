@@ -1,10 +1,35 @@
 .root {
   display: flex;
   flex-direction: column;
+  width: 20%;
+  height: auto;
 }
 
 .suggestions {
-  height: 100px;
-  width: 100px;
-  background-color: aqua;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 200px;
+  min-height: 200px;
+  overflow: auto;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--gray300);
+  border-radius: var(--size1);
+  padding: var(--size1) var(--size2);
+}
+
+.activeRoot {
+  border-radius: var(--size1);
+  background-color: "#f4f4f4";
+  display: flex;
+  flex-direction: column;
+  top: 0;
+}
+
+.listItem {
+  padding: var(--size1) var(--size2);
 }

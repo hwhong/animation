@@ -30,6 +30,7 @@ import {
   CursorGradient,
   Tilt,
   Input,
+  FanOutCards,
 } from "@/v2";
 
 export function Main() {
@@ -79,6 +80,7 @@ export function Main() {
     <CursorGradient key={23} />,
     <Tilt key={24} />,
     <Input key={25} />,
+    <FanOutCards key={26} />,
   ];
 
   return (
