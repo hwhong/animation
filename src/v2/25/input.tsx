@@ -7,7 +7,10 @@ export function Input() {
   const [isInputActive, setIsInputActive] = useState(false);
   const [value, setValue] = useState("");
   const ref = useRef(null);
-  useOnClickOutside(ref, (e) => setIsInputActive(false));
+  useOnClickOutside(ref, (e) => {
+    setIsInputActive(false);
+    setValue("");
+  });
 
   const onChange = ({ currentTarget }: React.ChangeEvent<HTMLInputElement>) => {
     setIsInputActive(true);

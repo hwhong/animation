@@ -1,10 +1,64 @@
 .root {
   display: flex;
   flex-direction: column;
+  width: 40%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .cardRoot {
-  padding: var(--size8);
-  width: 50%;
-  height: 80%;
+  padding: var(--size2);
+  width: 150px;
+  height: 180px;
+  position: absolute;
+  box-shadow: var(--boxShadow);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.color {
+  width: 100%;
+  height: 120px;
+}
+
+.name {
+  margin-top: var(--size1);
+}
+
+.button {
+  position: absolute;
+  padding: var(--size2) var(--size4);
+  border-radius: var(--size3);
+  background-color: var(--gray100);
+  bottom: var(--size4);
+  cursor: pointer;
+  width: auto;
+}
+
+.closeButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--gray100);
+  bottom: var(--size4);
+  cursor: pointer;
+}
+
+.focus {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+.focusName {
+  margin: var(--size1);
 }

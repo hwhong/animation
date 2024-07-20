@@ -19,6 +19,8 @@
   --size7: 36px;
   --size8: 40px;
   --size9: 48px;
+
+  --boxShadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25);
 }
 
 * {
