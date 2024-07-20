@@ -52,9 +52,7 @@ export function FanOutCards() {
               className={styles.color}
               style={{ backgroundColor: color }}
             />
-            <motion.span layoutId={`name-${color}`} className={styles.name}>
-              {color}
-            </motion.span>
+            <motion.span className={styles.name}>{color}</motion.span>
           </motion.div>
         ))
       ) : (
@@ -65,9 +63,10 @@ export function FanOutCards() {
           style={{ backgroundColor: "#feb90c" }}
         >
           <motion.span
-            layoutId={`name-#feb90c`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className={styles.focusName}
-            layout
+            transition={{ delay: 0.3 }}
           >
             #feb90c
           </motion.span>
@@ -77,19 +76,23 @@ export function FanOutCards() {
       <AnimatePresence>
         {status === Status.INACTIVE ? (
           <motion.div
+            key="choose"
             className={styles.button}
             onClick={onClick}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ scale: 0 }}
           >
             Choose
           </motion.div>
         ) : (
           <motion.div
+            key="close"
             className={styles.closeButton}
             onClick={onClick}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ scale: 0 }}
           >
             <CloseIcon />
           </motion.div>
