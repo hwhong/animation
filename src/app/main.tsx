@@ -31,6 +31,7 @@ import {
   Tilt,
   Input,
   FanOutCards,
+  Severance,
 } from "@/v2";
 
 export function Main() {
@@ -81,6 +82,7 @@ export function Main() {
     <Tilt key={24} />,
     <Input key={25} />,
     <FanOutCards key={26} />,
+    <Severance key={27} />,
   ];
 
   return (
