@@ -32,6 +32,7 @@ import {
   Input,
   FanOutCards,
   Severance,
+  NightMode,
 } from "@/v2";
 
 export function Main() {
@@ -83,6 +84,7 @@ export function Main() {
     <Input key={25} />,
     <FanOutCards key={26} />,
     <Severance key={27} />,
+    <NightMode key={28} />,
   ];
 
   return (

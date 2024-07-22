@@ -25,3 +25,4 @@ export { Tilt } from "./24/tilt";
 export { Input } from "./25/input";
 export { FanOutCards } from "./26/fan-out-cards";
 export { Severance } from "./27/severance";
+export { NightMode } from "./28/night-mode";
