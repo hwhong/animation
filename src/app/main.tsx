@@ -33,6 +33,7 @@ import {
   FanOutCards,
   Severance,
   NightMode,
+  EmojiReaction,
 } from "@/v2";
 
 export function Main() {
@@ -85,6 +86,7 @@ export function Main() {
     <FanOutCards key={26} />,
     <Severance key={27} />,
     <NightMode key={28} />,
+    <EmojiReaction key={29} />,
   ];
 
   return (
