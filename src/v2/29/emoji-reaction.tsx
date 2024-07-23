@@ -59,7 +59,6 @@ export function EmojiReaction() {
 
 interface EmojiProps {
   emojiObj: EmojiObj;
-
   onAnimateEnd: () => void;
 }
 
