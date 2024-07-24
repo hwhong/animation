@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={GeistMono.className}>{children}</body>
       <Analytics />
+      <GoogleAnalytics gaId="G-M7YZKZW82K" />
     </html>
   );
 }
