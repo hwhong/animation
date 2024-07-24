@@ -19,7 +19,7 @@ export function EmojiReaction() {
   const [elementRef, bounds] = useMeasure();
   const [emojis, setEmojis] = useState<EmojiObj[]>([]);
 
-  const icons = ["⚽️", "🥞", "👋"];
+  const icons = ["⚽️", "👋", "🥞"];
 
   const onEmojiClick = (emoji: string) => {
     const left = genRand(DEFAULT_GAP, bounds.width - DEFAULT_GAP);
