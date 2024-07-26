@@ -35,6 +35,7 @@ import {
   NightMode,
   EmojiReaction,
   LoadingState,
+  HoverShow,
 } from "@/v2";
 
 export function Main() {
@@ -89,6 +90,7 @@ export function Main() {
     <NightMode key={28} />,
     <EmojiReaction key={29} />,
     <LoadingState key={30} />,
+    <HoverShow key={31} />,
   ];
 
   return (

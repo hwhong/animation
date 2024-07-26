@@ -28,3 +28,4 @@ export { Severance } from "./27/severance";
 export { NightMode } from "./28/night-mode";
 export { EmojiReaction } from "./29/emoji-reaction";
 export { LoadingState } from "./30/loading-state";
+export { HoverShow } from "./31/hover-show";

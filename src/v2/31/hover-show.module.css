@@ -1,0 +1,46 @@
+.root {
+  max-width: 500px;
+  width: 800px;
+  position: relative;
+  padding: var(--size4) var(--size3);
+  user-select: none;
+}
+
+.background {
+  background-color: var(--gray100);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  border-radius: var(--size2);
+}
+
+.topWrapper {
+  margin-bottom: var(--size4);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flag {
+  display: grid;
+  grid-template-columns: 5px 5px 5px;
+  grid-template-rows: 15px;
+  position: relative;
+}
+
+.blue {
+  background-color: #0055a4;
+  border-radius: 150px 0 0 150px;
+}
+
+.red {
+  background-color: #ef4135;
+  border-radius: 0 150px 150px 0;
+}
+
+.description {
+  position: relative;
+  font-size: 14px;
+  max-width: 300px;
+}
