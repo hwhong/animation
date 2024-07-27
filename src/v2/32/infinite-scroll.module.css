@@ -1,0 +1,16 @@
+.root {
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 200px;
+  width: 100%;
+  display: flex;
+}
+
+.block {
+  height: 100%;
+  min-width: 100px;
+  margin: 10px 20px;
+  background-color: #d4d4d4;
+}

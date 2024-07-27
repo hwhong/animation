@@ -29,3 +29,8 @@ export { NightMode } from "./28/night-mode";
 export { EmojiReaction } from "./29/emoji-reaction";
 export { LoadingState } from "./30/loading-state";
 export { HoverShow } from "./31/hover-show";
+export { InfiniteScroll } from "./32/infinite-scroll";
+
+/** Ideas
+    Wheel, 
+ */

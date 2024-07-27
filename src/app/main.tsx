@@ -36,6 +36,7 @@ import {
   EmojiReaction,
   LoadingState,
   HoverShow,
+  InfiniteScroll,
 } from "@/v2";
 
 export function Main() {
@@ -91,6 +92,7 @@ export function Main() {
     <EmojiReaction key={29} />,
     <LoadingState key={30} />,
     <HoverShow key={31} />,
+    <InfiniteScroll key={32} />,
   ];
 
   return (
