@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: var(--size3);
+  background-color: var(--gray100);
+  border-radius: var(--size2);
+  user-select: none;
+}
+
+.flip {
+  padding: var(--size3) var(--size2);
+  font-size: var(--size5);
+  background-color: var(--gray300);
+  border-radius: var(--size2);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  gap: var(--size2);
+  margin: var(--size1) 0;
+}
