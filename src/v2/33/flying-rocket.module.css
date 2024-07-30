@@ -1,0 +1,14 @@
+.root {
+  width: 80%;
+  height: 60%;
+  border: 1px solid var(--gray100);
+  position: relative;
+}
+
+.cloud {
+  width: fit-content;
+  height: fit-content;
+  font-size: var(--size8);
+  position: relative;
+  aspect-ratio: 1 / 1;
+}

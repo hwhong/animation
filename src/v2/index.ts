@@ -30,8 +30,10 @@ export { EmojiReaction } from "./29/emoji-reaction";
 export { LoadingState } from "./30/loading-state";
 export { HoverShow } from "./31/hover-show";
 export { Flipper } from "./32/flipper";
+export { FlyingRocket } from "./33/flying-rocket";
+
 export { InfiniteScroll } from "./50/infinite-scroll";
 
 /** Ideas
-    Wheel, flipper, infinite-scroll
+    Wheel, infinite-scroll
  */
