@@ -58,7 +58,7 @@ export function Main() {
 
   const onItemClick = (index: number) => setSelectedItem(index);
 
-  const needMoreWork = [5, 15, 17, 24];
+  const incompletes = [5, 15, 17, 24];
 
   const components = [
     <></>,
@@ -127,16 +127,19 @@ export function Main() {
           const idx = i + 1;
           /** Modal exists */
           const isSelectionActive = selectedItem !== null;
+          const isIncomplete = incompletes.includes(idx);
 
           return (
             <motion.div
               key={idx}
               layoutId={`selectedIdx-${selectedItem}`}
-              onClick={() => !isSelectionActive && onItemClick(idx)}
+              onClick={() =>
+                !isSelectionActive && !isIncomplete && onItemClick(idx)
+              }
               className={classNames(styles.block, GeistMono.className, {
                 [styles.unfinished]: components.length - 1 < idx,
                 [styles.activeSelection]: isSelectionActive,
-                [styles.needMoreWork]: needMoreWork.includes(idx),
+                [styles.incomplete]: isIncomplete,
               })}
             >
               {idx}

@@ -51,6 +51,8 @@
   color: gray;
 }
 
-.needMoreWork {
-  background-color: var(--yellow);
+.incomplete {
+  background-color: var(--gray100);
+  color: var(--gray300);
+  cursor: not-allowed;
 }
