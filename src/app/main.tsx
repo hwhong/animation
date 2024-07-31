@@ -37,7 +37,7 @@ import {
   LoadingState,
   HoverShow,
   Flipper,
-  FlyingRocket,
+  Flying,
 } from "@/v2";
 
 export function Main() {
@@ -94,7 +94,7 @@ export function Main() {
     <LoadingState key={30} />,
     <HoverShow key={31} />,
     <Flipper key={32} />,
-    <FlyingRocket key={33} />,
+    <Flying key={33} />,
   ];
 
   return (

@@ -1,9 +1,8 @@
 import React from "react";
-import styles from "./flying-rocket.module.css";
+import styles from "./flying.module.css";
 import { v4 } from "uuid";
 import { motion } from "framer-motion";
 import { random } from "@/utils/utility";
-
 import { useMeasure } from "@uidotdev/usehooks";
 
 const PADDING = 100;
@@ -13,7 +12,7 @@ interface FlyingObject {
   obj: string;
 }
 
-export function FlyingRocket() {
+export function Flying() {
   const [ref, { width }] = useMeasure();
   const flyingObjects: FlyingObject[] = [
     { id: v4(), obj: "🛸" },
