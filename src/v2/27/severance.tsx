@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./severance.module.css";
-import { genRand } from "@/utils/utility";
+import { random } from "@/utils/utility";
 
 export function Severance() {
-  const NUMS = Array.from(Array(50).keys()).map(() => genRand(0, 10, 0));
+  const NUMS = Array.from(Array(50).keys()).map(() => random(0, 10, 0));
 
   return (
     <div className={styles.root}>
@@ -38,8 +38,8 @@ interface NumberProps {
 function Number({ num, direction, index }: NumberProps) {
   const dir = direction === Direction.VERTICAL ? "top" : "left";
 
-  const duration = genRand(2, 8);
-  const movement = genRand(10, 20);
+  const duration = random(2, 8);
+  const movement = random(10, 20);
 
   return (
     <motion.div

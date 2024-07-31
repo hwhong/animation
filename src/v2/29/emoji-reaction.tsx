@@ -3,7 +3,7 @@ import useMeasure from "react-use-measure";
 import { v4 } from "uuid";
 import styles from "./emoji-reaction.module.css";
 import { motion } from "framer-motion";
-import { genRand } from "@/utils/utility";
+import { random } from "@/utils/utility";
 
 interface EmojiObj {
   emoji: string;
@@ -22,16 +22,15 @@ export function EmojiReaction() {
   const icons = ["⚽️", "👋", "🥞"];
 
   const onEmojiClick = (emoji: string) => {
-    const left = genRand(DEFAULT_GAP, bounds.width - DEFAULT_GAP);
-    const duration = genRand(1, 2);
-    const scale = genRand(1, 5);
+    const left = random(DEFAULT_GAP, bounds.width - DEFAULT_GAP);
+    const duration = random(1, 2);
+    const scale = random(1, 5);
     setEmojis([...emojis, { emoji, id: v4(), left, duration, scale }]);
   };
 
   const onAnimateEnd = (emoji: EmojiObj) => {
     // const newArr = emojis.filter(({ id }) => id !== emoji.id);
     emojis.shift();
-    console.log(emojis);
     setEmojis([...emojis]);
   };
 

@@ -1,4 +1,4 @@
-export function genRand(min: number, max: number, decimalPlaces = 2) {
+export function random(min: number, max: number, decimalPlaces = 2) {
   var rand =
     Math.random() < 0.5
       ? (1 - Math.random()) * (max - min) + min
