@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { random } from "@/utils/utility";
 import { useMeasure } from "@uidotdev/usehooks";
 
-const PADDING = 100;
+const PADDING = 50;
 
 interface FlyingObject {
   id: string;
@@ -44,9 +44,9 @@ function FlyingObject({ maxLeft, children }: FlyingObjectProps) {
       initial={{ marginLeft: -PADDING }}
       animate={{ marginLeft: maxLeft! + PADDING }}
       transition={{
-        duration: random(7, 10),
+        duration: random(5, 10),
         repeat: Infinity,
-        delay: random(1, 5),
+        delay: random(0, 4),
       }}
     >
       {children}
