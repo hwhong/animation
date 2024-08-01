@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./expand-navigation.module.css";
-import useMeasure from "react-use-measure";
+import { useMeasure } from "@uidotdev/usehooks";
 
 interface TabContent {
   tabName: string;
@@ -23,8 +23,9 @@ export function ExpandNavigation() {
     <AnimatePresence initial={false}>
       <motion.div
         className={styles.root}
+        layout
         // Super hacky here
-        animate={{ height: hoverIdx === null ? "auto" : bounds.height }}
+        animate={{ height: hoverIdx === null ? "auto" : bounds.height! }}
       >
         <div
           ref={ref}

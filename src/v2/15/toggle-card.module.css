@@ -39,3 +39,7 @@
 .inner {
   padding: 14px 18px;
 }
+
+.textContent {
+  margin-top: var(--size2);
+}
