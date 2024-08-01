@@ -38,6 +38,7 @@ import {
   HoverShow,
   Flipper,
   Flying,
+  JumpContent,
 } from "@/v2";
 
 export function Main() {
@@ -95,6 +96,7 @@ export function Main() {
     <HoverShow key={31} />,
     <Flipper key={32} />,
     <Flying key={33} />,
+    <JumpContent key={34} />,
   ];
 
   return (

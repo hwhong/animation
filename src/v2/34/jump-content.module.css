@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+  padding: var(--size2);
+  background-color: var(--gray100);
+  border-radius: var(--size2);
+
+  display: flex;
+  justify-content: center;
+}
+
+.jumpContent {
+  position: absolute;
+  padding: var(--size4);
+  gap: var(--size5);
+  display: flex;
+
+  background-color: var(--gray100);
+  border-radius: var(--size2);
+  z-index: -1;
+}
+
+.block {
+  width: var(--size9);
+  height: var(--size9);
+  border-radius: var(--size2);
+}
+
+.icon {
+  cursor: pointer;
+  z-index: 10;
+}
