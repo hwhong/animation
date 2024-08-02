@@ -39,6 +39,7 @@ import {
   Flipper,
   Flying,
   JumpContent,
+  List,
 } from "@/v2";
 
 export function Main() {
@@ -97,6 +98,7 @@ export function Main() {
     <Flipper key={32} />,
     <Flying key={33} />,
     <JumpContent key={34} />,
+    <List key={35} />,
   ];
 
   return (

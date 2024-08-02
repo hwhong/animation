@@ -25,6 +25,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "@vercel/analytics": "^1.0.1",
     "classnames": "^2.3.2",
+    "emoji-picker-react": "^4.11.1",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "firebase": "^10.12.4",

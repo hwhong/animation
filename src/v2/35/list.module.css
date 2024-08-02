@@ -1,0 +1,109 @@
+.root {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+
+  margin-top: var(--size4);
+  align-self: baseline;
+}
+
+.inputWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.emojiDisplay {
+  width: var(--size6);
+  height: var(--size6);
+  position: relative;
+  padding: var(--size1);
+  font-size: var(--size5);
+
+  border-radius: var(--size0);
+  background-color: var(--gray100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pickerWrapper {
+  position: absolute;
+  top: 0;
+  transform-origin: top right;
+  right: 40px;
+}
+
+.picker {
+  display: flex;
+  background-color: var(--gray100);
+  border-radius: var(--size1);
+  gap: var(--size1);
+  padding: var(--size0);
+}
+
+.pick {
+  width: var(--size6);
+  height: var(--size6);
+  padding: var(--size0);
+  border-radius: var(--size0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background-color: transparent;
+  border: 1px solid var(--gray300);
+  outline: none;
+  width: 100%;
+  margin: 0 var(--size3);
+  padding: var(--size0) var(--size1);
+  border-radius: var(--size1);
+}
+
+.button {
+  min-width: var(--size6);
+  height: var(--size6);
+
+  border: none;
+  outline: none;
+
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--size0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--gray300);
+  margin: var(--size2) 0;
+  border-radius: var(--size2);
+}
+
+.listStyle {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.item {
+  border-radius: var(--size2);
+  margin-bottom: var(--size2);
+  width: 100%;
+  padding: var(--size1) var(--size2);
+  /* position: relative; */
+  background: var(--gray100);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: grab;
+}

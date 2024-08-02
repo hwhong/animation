@@ -32,6 +32,7 @@ export { HoverShow } from "./31/hover-show";
 export { Flipper } from "./32/flipper";
 export { Flying } from "./33/flying";
 export { JumpContent } from "./34/jump-content";
+export { List } from "./35/list";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 
