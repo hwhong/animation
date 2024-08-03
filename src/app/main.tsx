@@ -40,6 +40,7 @@ import {
   Flying,
   JumpContent,
   List,
+  HoverIcons,
 } from "@/v2";
 
 export function Main() {
@@ -99,6 +100,7 @@ export function Main() {
     <Flying key={33} />,
     <JumpContent key={34} />,
     <List key={35} />,
+    <HoverIcons key={36} />,
   ];
 
   return (

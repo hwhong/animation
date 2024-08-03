@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  gap: var(--size5);
+  font-size: var(--size6);
+  position: relative;
+
+  width: 80%;
+  height: 70%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+}
+
+.cityName {
+  height: fit-content;
+  color: var(--gray300);
+  user-select: none;
+}

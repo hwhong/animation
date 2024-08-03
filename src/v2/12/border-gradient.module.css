@@ -17,7 +17,16 @@
 }
 
 .gradient {
-  background: linear-gradient(180deg, #cec7ea 0%, #c8e1e7 50%, #fdffc4 100%);
+  background: linear-gradient(
+    180deg,
+    var(--blue),
+    var(--blue) 35%,
+    var(--green),
+    60.5%,
+    var(--yellow) 0,
+    var(--yellow)
+  );
+
   position: absolute;
   z-index: 2;
   inset: 0;
@@ -27,9 +36,9 @@
 }
 
 .content {
-  width: 150px;
-  height: 50px;
-  background: #eeeeee;
+  width: 250px;
+  height: 250px;
+  background: var(--gray100);
   padding: 8px;
 
   display: flex;

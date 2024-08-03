@@ -15,7 +15,7 @@ import classNames from "classnames";
 export function List() {
   const [items, setItems] = useState<string[]>([]);
   const [value, setValue] = useState("");
-  const [emoji, setEmoji] = useState("😂");
+  const [emoji, setEmoji] = useState("⚽️");
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   const ref = useRef(null);
