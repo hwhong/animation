@@ -41,6 +41,7 @@ import {
   JumpContent,
   List,
   HoverIcons,
+  PausePlay,
 } from "@/v2";
 
 export function Main() {
@@ -101,6 +102,7 @@ export function Main() {
     <JumpContent key={34} />,
     <List key={35} />,
     <HoverIcons key={36} />,
+    <PausePlay key={37} />,
   ];
 
   return (

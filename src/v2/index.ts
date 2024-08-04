@@ -34,6 +34,7 @@ export { Flying } from "./33/flying";
 export { JumpContent } from "./34/jump-content";
 export { List } from "./35/list";
 export { HoverIcons } from "./36/hover-icons";
+export { PausePlay } from "./37/pause-play";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 
