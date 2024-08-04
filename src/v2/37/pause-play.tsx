@@ -43,3 +43,5 @@ export function PausePlay() {
     </div>
   );
 }
+
+//https://www.framer.com/motion/use-animate/
