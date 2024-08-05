@@ -42,6 +42,7 @@ import {
   List,
   HoverIcons,
   PausePlay,
+  CursorMover,
 } from "@/v2";
 
 export function Main() {
@@ -103,6 +104,7 @@ export function Main() {
     <List key={35} />,
     <HoverIcons key={36} />,
     <PausePlay key={37} />,
+    <CursorMover key={38} />,
   ];
 
   return (
