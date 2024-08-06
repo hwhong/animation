@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  width: var(--size9);
+  height: var(--size9);
+  background-color: var(--green);
+  border-radius: 50%;
+}

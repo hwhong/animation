@@ -36,6 +36,7 @@ export { List } from "./35/list";
 export { HoverIcons } from "./36/hover-icons";
 export { PausePlay } from "./37/pause-play";
 export { CursorMover } from "./38/cursor-mover";
+export { Bounce } from "./39/bounce";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 

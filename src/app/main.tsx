@@ -43,6 +43,7 @@ import {
   HoverIcons,
   PausePlay,
   CursorMover,
+  Bounce,
 } from "@/v2";
 
 export function Main() {
@@ -105,6 +106,7 @@ export function Main() {
     <HoverIcons key={36} />,
     <PausePlay key={37} />,
     <CursorMover key={38} />,
+    <Bounce key={39} />,
   ];
 
   return (
