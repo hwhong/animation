@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.wrapper {
+  padding-top: 500px;
+  padding-bottom: 500px;
+}
+
+.frame1 {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}

@@ -37,9 +37,12 @@ export { HoverIcons } from "./36/hover-icons";
 export { PausePlay } from "./37/pause-play";
 export { CursorMover } from "./38/cursor-mover";
 export { Bounce } from "./39/bounce";
+export { ScrollFrame } from "./40/scroll-frame";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 
 /** Ideas
     Wheel, infinite-scroll (https://www.oldfriends.studio/about)
+    check cv email, design insp email.
+    clock?
  */

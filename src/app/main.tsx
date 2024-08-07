@@ -44,6 +44,7 @@ import {
   PausePlay,
   CursorMover,
   Bounce,
+  ScrollFrame,
 } from "@/v2";
 
 export function Main() {
@@ -107,6 +108,7 @@ export function Main() {
     <PausePlay key={37} />,
     <CursorMover key={38} />,
     <Bounce key={39} />,
+    <ScrollFrame key={40} />,
   ];
 
   return (
