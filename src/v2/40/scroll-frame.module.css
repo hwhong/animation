@@ -5,8 +5,9 @@
 }
 
 .wrapper {
-  padding-top: 500px;
+  padding-top: 300px;
   padding-bottom: 500px;
+  display: flex;
 }
 
 .frame1 {
