@@ -5,13 +5,19 @@
 }
 
 .wrapper {
-  padding-top: 300px;
+  padding-top: 200px;
   padding-bottom: 500px;
-  display: flex;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 20px;
 }
 
 .frame1 {
-  width: 100px;
-  height: 100px;
-  background-color: black;
+  width: 250px;
+  height: 250px;
+  background-color: blue;
+  justify-self: center;
+  align-self: center;
 }

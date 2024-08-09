@@ -20,7 +20,7 @@ export function ScrollFrame() {
   return (
     <motion.div className={styles.root} ref={ref}>
       <div className={styles.wrapper}>
-        {Array.from(Array(10).keys()).map((i) => {
+        {Array.from(Array(9).keys()).map((i) => {
           return <Block key={i} scrollY={scrollY} />;
         })}
       </div>
@@ -38,10 +38,11 @@ function Block({ scrollY }: BlockProps) {
   const xVal = useTransform(scrollY, [0, END_THRESHOLD], [ranX, 0]);
   const yVal = useTransform(scrollY, [0, END_THRESHOLD], [ranY, 0]);
   const rotate = useTransform(scrollY, [0, END_THRESHOLD], [35, 0]);
+
   return (
     <motion.div
       className={styles.frame1}
-      style={{ translateX: xVal, translateY: yVal, rotate }}
+      // style={{ translateX: xVal, translateY: yVal, rotate }}
     ></motion.div>
   );
 }
