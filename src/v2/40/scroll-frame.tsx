@@ -1,12 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./scroll-frame.module.css";
-import {
-  motion,
-  useMotionValue,
-  MotionValue,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { random } from "@/utils/utility";
 
 const END_THRESHOLD = 200;
