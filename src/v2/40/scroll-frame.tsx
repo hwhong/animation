@@ -1,9 +1,19 @@
 import React, { useRef } from "react";
 import styles from "./scroll-frame.module.css";
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  MotionStyle,
+  MotionValue,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { random } from "@/utils/utility";
 
 const END_THRESHOLD = 200;
+
+interface CustomStyle {
+  backgroundColor: string;
+}
 
 export function ScrollFrame() {
   const ref = useRef(null);
@@ -11,11 +21,14 @@ export function ScrollFrame() {
     container: ref,
   });
 
+  const customStyle: CustomStyle[] = [{ backgroundColor: "#00b2ffs" }];
+
   return (
     <motion.div className={styles.root} ref={ref}>
       <div className={styles.wrapper}>
         {Array.from(Array(9).keys()).map((i) => {
-          return <Block key={i} scrollY={scrollY} />;
+          const style = customStyle[i];
+          return <Block key={i} scrollY={scrollY} style={style} />;
         })}
       </div>
     </motion.div>
@@ -24,9 +37,10 @@ export function ScrollFrame() {
 
 interface BlockProps {
   scrollY: MotionValue<number>;
+  style: MotionStyle;
 }
 
-function Block({ scrollY }: BlockProps) {
+function Block({ scrollY, style }: BlockProps) {
   const ranX = random(0, 300);
   const ranY = random(100, 150);
   const xVal = useTransform(scrollY, [0, END_THRESHOLD], [ranX, 0]);
@@ -36,7 +50,7 @@ function Block({ scrollY }: BlockProps) {
   return (
     <motion.div
       className={styles.frame1}
-      // style={{ translateX: xVal, translateY: yVal, rotate }}
-    ></motion.div>
+      style={{ translateX: xVal, translateY: yVal, rotate, ...style }}
+    />
   );
 }
