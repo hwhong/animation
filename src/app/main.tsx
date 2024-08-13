@@ -46,6 +46,7 @@ import {
   Bounce,
   ScrollFrame,
 } from "@/v2";
+import useMeasure from "react-use-measure";
 
 export function Main() {
   const [selectedItem, setSelectedItem] = useState<null | number>(null);

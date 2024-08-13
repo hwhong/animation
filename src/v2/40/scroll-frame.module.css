@@ -4,18 +4,31 @@
   overflow: scroll;
 }
 
-.wrapper {
-  padding-top: 200px;
-  padding-bottom: 500px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+.parentWrapper {
+  position: relative;
 }
 
-.frame1 {
-  width: 250px;
-  height: 250px;
-  background-color: blue;
+.wrapper {
+  padding: 300px 100px 0 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--size4);
+}
+
+.frame {
   justify-self: center;
-  align-self: center;
+  align-self: start;
+  border-radius: var(--size4);
+}
+
+.background {
+  position: absolute;
+  background-color: var(--gray100);
+  z-index: -1;
+  padding: 100px;
+  left: 80px;
+  right: 80px;
+  bottom: 80px;
+  top: 250px;
+  border-radius: var(--size4);
 }
