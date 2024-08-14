@@ -45,8 +45,8 @@ import {
   CursorMover,
   Bounce,
   ScrollFrame,
+  InOutStagger,
 } from "@/v2";
-import useMeasure from "react-use-measure";
 
 export function Main() {
   const [selectedItem, setSelectedItem] = useState<null | number>(null);
@@ -110,6 +110,7 @@ export function Main() {
     <CursorMover key={38} />,
     <Bounce key={39} />,
     <ScrollFrame key={40} />,
+    <InOutStagger key={41} />,
   ];
 
   return (

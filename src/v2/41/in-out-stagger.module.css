@@ -1,0 +1,17 @@
+.root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  width: 40%;
+  height: var(--size4);
+  background-color: black;
+  margin: var(--size2) 0;
+  border-radius: var(--size0);
+  position: relative;
+}

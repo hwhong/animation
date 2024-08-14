@@ -38,6 +38,7 @@ export { PausePlay } from "./37/pause-play";
 export { CursorMover } from "./38/cursor-mover";
 export { Bounce } from "./39/bounce";
 export { ScrollFrame } from "./40/scroll-frame";
+export { InOutStagger } from "./41/in-out-stagger";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 
@@ -45,4 +46,5 @@ export { InfiniteScroll } from "./50/infinite-scroll";
     Wheel, infinite-scroll (https://www.oldfriends.studio/about)
     check cv email, design insp email.
     clock?
+    A rotating thing - Close and far, rotate around y- axis
  */
