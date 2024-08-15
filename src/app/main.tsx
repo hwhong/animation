@@ -66,7 +66,7 @@ export function Main() {
 
   const onItemClick = (index: number) => setSelectedItem(index);
 
-  const incompletes = [5, 17, 24, 25];
+  const incompletes = [5, 17, 24, 25, 35];
 
   const components = [
     <></>,

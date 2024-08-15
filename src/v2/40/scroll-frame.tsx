@@ -138,6 +138,8 @@ function Block({ scrollY, customStyle }: BlockProps) {
         height,
         backgroundColor,
       }}
-    />
+    >
+      Scroll
+    </motion.div>
   );
 }

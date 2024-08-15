@@ -19,6 +19,8 @@
   justify-self: center;
   align-self: start;
   border-radius: var(--size4);
+  padding: var(--size4);
+  color: var(--gray300);
 }
 
 .background {
