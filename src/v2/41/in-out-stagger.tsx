@@ -1,79 +1,65 @@
 import React, { useState } from "react";
 import styles from "./in-out-stagger.module.css";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 
-type Status = "in" | "out" | "none";
+type Status = "in" | "out";
 
 export function InOutStagger() {
-  const [status, setStatus] = useState<Status>("none");
+  const [status, setStatus] = useState<Status>("in");
 
-  const onClick = () => {
-    switch (status) {
-      case "in":
-        setStatus("out");
-        break;
-      case "out":
-        setStatus("none");
-        break;
-      case "none":
-        setStatus("in");
-        break;
-    }
-  };
+  const onClick = () => setStatus(status === "in" ? "out" : "in");
 
-  const variants: Record<Status, any> = {
-    in: (i: number) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.5,
-      },
-    }),
-    out: (i: number) => ({
-      x: -1000,
-      opacity: 0,
-      transition: {
-        delay: i * 0.5,
-      },
-    }),
-    none: (i: number) => ({
-      x: 1000,
-      opacity: 0,
-      transition: {
-        delay: i * 0.5,
-      },
-    }),
-  };
+  const colors = [
+    "#00b2ff",
+    "#01c947",
+    "#feb90c",
+    "#00b2ff",
+    "#01c947",
+    "#feb90c",
+  ];
 
   return (
-    <motion.div
-      className={styles.root}
-      onClick={onClick}
-      animate={status}
-      variants={{
-        in: {
-          transition: {
-            delayChildren: 0.5,
-          },
-        },
-        out: {
-          transition: {
-            delayChildren: 0.5,
-          },
-        },
-      }}
-    >
-      {Array.from(Array(5).keys()).map((i) => {
-        return (
-          <motion.div
-            key={i}
-            initial={"none"}
-            className={styles.line}
-            animate={status}
-            variants={variants}
-          />
-        );
-      })}
+    <motion.div className={styles.root} onClick={onClick}>
+      {status === "in" &&
+        colors.map((color, i) => {
+          return (
+            <motion.li
+              key={i}
+              className={styles.line}
+              style={{ backgroundColor: color }}
+              initial={{
+                x: 1000,
+              }}
+              animate={{
+                x: 0,
+              }}
+              transition={{
+                duration: 1,
+                delay: i * 0.1,
+              }}
+            />
+          );
+        })}
+      {status === "out" &&
+        colors.map((color, i) => {
+          return (
+            <motion.li
+              key={i}
+              style={{ backgroundColor: color }}
+              className={styles.line}
+              initial={{
+                x: 0,
+              }}
+              animate={{
+                x: -1000,
+              }}
+              transition={{
+                duration: 1,
+                delay: i * 0.1,
+              }}
+            />
+          );
+        })}
     </motion.div>
   );
 }
