@@ -39,6 +39,7 @@ export { CursorMover } from "./38/cursor-mover";
 export { Bounce } from "./39/bounce";
 export { ScrollFrame } from "./40/scroll-frame";
 export { InOutStagger } from "./41/in-out-stagger";
+export { Pills } from "./42/pills";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 

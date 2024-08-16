@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size2);
+}
+
+.pill {
+  padding: var(--size1) var(--size2);
+  background-color: var(--gray100);
+  border-radius: var(--size1);
+  cursor: pointer;
+}

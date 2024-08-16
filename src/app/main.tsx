@@ -46,6 +46,7 @@ import {
   Bounce,
   ScrollFrame,
   InOutStagger,
+  Pills,
 } from "@/v2";
 
 export function Main() {
@@ -111,6 +112,7 @@ export function Main() {
     <Bounce key={39} />,
     <ScrollFrame key={40} />,
     <InOutStagger key={41} />,
+    <Pills key={42} />,
   ];
 
   return (
