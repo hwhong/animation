@@ -1,8 +1,9 @@
 .root {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--size2);
+  width: 100%;
 }
 
 .pill {
@@ -10,4 +11,12 @@
   background-color: var(--gray100);
   border-radius: var(--size1);
   cursor: pointer;
+  display: flex;
+  text-wrap: nowrap;
+  float: left;
+}
+
+.text {
+  text-wrap: nowrap;
+  width: 100%;
 }

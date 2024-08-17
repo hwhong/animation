@@ -6,32 +6,58 @@ export function Pills() {
   const [currSelection, setCurSelection] = useState("New York");
   const texts = ["New York", "London", "San Francisco", "Seoul", "Taipei"];
 
-  const variants = {
-    initial: { width: 0 },
-    open: {
-      width: "auto",
-      transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] },
-    },
-  };
-
   return (
     <div className={styles.root}>
       {texts.map((name) => {
         const isSelection = currSelection === name;
         return (
-          <motion.div
+          <Pill
             key={name}
-            className={styles.pill}
+            name={name}
             onClick={() => setCurSelection(name)}
-            layout
-            variants={variants}
-            animate={currSelection ? "open" : "initial"}
-          >
-            {name.charAt(0)}
-            {isSelection && name.substring(1, name.length)}
-          </motion.div>
+            isSelection={isSelection}
+          />
         );
       })}
     </div>
+  );
+}
+
+interface PillProps {
+  name: string;
+  onClick?: () => void;
+  isSelection: boolean;
+}
+
+export function Pill({ name, onClick, isSelection }: PillProps) {
+  const variants = {
+    initial: { width: 35 },
+    open: {
+      width: 150,
+    },
+  };
+  const textVariant = {
+    initial: { opacity: 0 },
+    open: {
+      opacity: 1,
+    },
+  };
+
+  return (
+    <motion.div
+      key={name}
+      className={styles.pill}
+      onClick={onClick}
+      variants={variants}
+      animate={isSelection ? "open" : "initial"}
+    >
+      {name.charAt(0)}
+      <motion.div
+        animate={isSelection ? "open" : "initial"}
+        variants={textVariant}
+      >
+        {isSelection ? name.substring(1, name.length) : null}
+      </motion.div>
+    </motion.div>
   );
 }
