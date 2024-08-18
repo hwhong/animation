@@ -40,6 +40,7 @@ export { Bounce } from "./39/bounce";
 export { ScrollFrame } from "./40/scroll-frame";
 export { InOutStagger } from "./41/in-out-stagger";
 export { Pills } from "./42/pills";
+export { Delete } from "./43/delete";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 

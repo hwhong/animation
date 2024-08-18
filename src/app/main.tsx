@@ -47,6 +47,7 @@ import {
   ScrollFrame,
   InOutStagger,
   Pills,
+  Delete,
 } from "@/v2";
 
 export function Main() {
@@ -113,6 +114,7 @@ export function Main() {
     <ScrollFrame key={40} />,
     <InOutStagger key={41} />,
     <Pills key={42} />,
+    <Delete key={43} />,
   ];
 
   return (

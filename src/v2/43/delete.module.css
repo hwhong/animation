@@ -1,0 +1,23 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--size2);
+}
+
+.item {
+  width: 150px;
+  height: 180px;
+  background-color: var(--gray100);
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  padding: var(--size1);
+  border-radius: var(--size1);
+}
+
+.icon {
+  color: var(--gray500);
+  scale: 0.8;
+  cursor: pointer;
+}
