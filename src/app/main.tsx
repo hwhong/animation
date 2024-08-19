@@ -48,6 +48,7 @@ import {
   InOutStagger,
   Pills,
   Delete,
+  Vinyl,
 } from "@/v2";
 
 export function Main() {
@@ -115,6 +116,7 @@ export function Main() {
     <InOutStagger key={41} />,
     <Pills key={42} />,
     <Delete key={43} />,
+    <Vinyl key={44} />,
   ];
 
   return (
