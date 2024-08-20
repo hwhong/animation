@@ -23,8 +23,8 @@
 
 .middle {
   background-color: var(--blue);
-  width: var(--size9);
-  height: var(--size9);
+  width: 70px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;

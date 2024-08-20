@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  justify-content: center;
+}
+
+.panel {
+  width: 150px;
+  height: 100px;
+  background-color: aqua;
+}

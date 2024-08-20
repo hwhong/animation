@@ -49,6 +49,7 @@ import {
   Pills,
   Delete,
   Vinyl,
+  StackInteraction,
 } from "@/v2";
 
 export function Main() {
@@ -69,7 +70,7 @@ export function Main() {
 
   const onItemClick = (index: number) => setSelectedItem(index);
 
-  const incompletes = [5, 17, 24, 25, 35];
+  const incompletes = [5, 17, 24, 25, 35, 38];
 
   const components = [
     <></>,
@@ -117,6 +118,7 @@ export function Main() {
     <Pills key={42} />,
     <Delete key={43} />,
     <Vinyl key={44} />,
+    <StackInteraction key={45} />,
   ];
 
   return (
