@@ -1,10 +1,13 @@
 .root {
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .panel {
   width: 150px;
   height: 100px;
   background-color: aqua;
+  position: absolute;
 }
