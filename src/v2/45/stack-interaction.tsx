@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./stack-interaction.module.css";
 import { motion } from "framer-motion";
 
-const CARD_OFFSET = 10;
+const CARD_OFFSET = 30;
 const SCALE_FACTOR = 0.06;
 
 export function StackInteraction() {
-  const colors = ["#00b2ff", "#01c947", "#feb90c"];
+  const [colors, setColors] = useState(["#00b2ff", "#01c947", "#feb90c"]);
+
+  const onClick = () => {
+    const [hd, ...tl] = colors;
+    setColors([...tl, hd]);
+  };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onClick={onClick}>
       {colors.map((color, index) => (
         <motion.div
           key={color}
