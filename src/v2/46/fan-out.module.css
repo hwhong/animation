@@ -1,0 +1,19 @@
+.root {
+  display: grid;
+  grid-template-columns: 120px 120px;
+  grid-template-rows: 150px 150px;
+  width: 70%;
+  height: 90%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tile {
+  width: 120px;
+  height: 150px;
+  background-color: aquamarine;
+
+  border-radius: var(--size2);
+}

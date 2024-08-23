@@ -43,6 +43,7 @@ export { Pills } from "./42/pills";
 export { Delete } from "./43/delete";
 export { Vinyl } from "./44/vinyl";
 export { StackInteraction } from "./45/stack-interaction";
+export { FanOut } from "./46/fan-out";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 

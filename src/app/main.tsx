@@ -50,6 +50,7 @@ import {
   Delete,
   Vinyl,
   StackInteraction,
+  FanOut,
 } from "@/v2";
 
 export function Main() {
@@ -119,6 +120,7 @@ export function Main() {
     <Delete key={43} />,
     <Vinyl key={44} />,
     <StackInteraction key={45} />,
+    <FanOut key={46} />,
   ];
 
   return (
