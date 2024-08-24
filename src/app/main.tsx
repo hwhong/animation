@@ -51,6 +51,7 @@ import {
   Vinyl,
   StackInteraction,
   FanOut,
+  Flower,
 } from "@/v2";
 
 export function Main() {
@@ -121,6 +122,7 @@ export function Main() {
     <Vinyl key={44} />,
     <StackInteraction key={45} />,
     <FanOut key={46} />,
+    <Flower key={47} />,
   ];
 
   return (
