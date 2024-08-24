@@ -52,6 +52,7 @@ import {
   StackInteraction,
   FanOut,
   Flower,
+  EnterAnimate,
 } from "@/v2";
 
 export function Main() {
@@ -123,6 +124,7 @@ export function Main() {
     <StackInteraction key={45} />,
     <FanOut key={46} />,
     <Flower key={47} />,
+    <EnterAnimate key={48} />,
   ];
 
   return (

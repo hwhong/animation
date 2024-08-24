@@ -3,7 +3,7 @@ import { motion, Variants } from "framer-motion";
 import styles from "./hover-show.module.css";
 
 export function HoverShow() {
-  const [isHover, setIsHover] = useState<"true" | "false">("true");
+  const [isHover, setIsHover] = useState<"true" | "false">("false");
 
   const backgroundVariant: Variants = {
     true: { width: "100%", height: "100%" },
@@ -15,18 +15,20 @@ export function HoverShow() {
 
   return (
     <motion.div
+      initial={false}
       className={styles.root}
-      onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <motion.div
+        initial={false}
         className={styles.background}
         animate={isHover}
         variants={backgroundVariant}
       ></motion.div>
       <div className={styles.topWrapper}>
-        <div>Paris Olympics</div>
+        <div onMouseEnter={onMouseEnter}>Paris Olympics</div>
         <motion.div
+          initial={false}
           className={styles.flag}
           animate={isHover}
           variants={{
@@ -42,6 +44,7 @@ export function HoverShow() {
 
       <motion.div
         className={styles.description}
+        initial={false}
         animate={isHover}
         variants={{
           true: { bottom: "0px", opacity: 1 },
