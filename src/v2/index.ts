@@ -46,6 +46,7 @@ export { StackInteraction } from "./45/stack-interaction";
 export { FanOut } from "./46/fan-out";
 export { Flower } from "./47/flower";
 export { EnterAnimate } from "./48/enter-animate";
+export { ScrollParent } from "./49/scroll-parent";
 
 export { InfiniteScroll } from "./50/infinite-scroll";
 

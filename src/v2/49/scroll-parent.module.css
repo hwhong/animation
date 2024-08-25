@@ -1,0 +1,17 @@
+.root {
+  border: 1px solid var(--gray300);
+  border-radius: var(--size1);
+}
+
+.scrollContainer {
+  height: 240px;
+  overflow-y: auto;
+}
+
+.box {
+  width: 300px;
+  height: var(--size9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

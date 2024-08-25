@@ -53,6 +53,7 @@ import {
   FanOut,
   Flower,
   EnterAnimate,
+  ScrollParent,
 } from "@/v2";
 
 export function Main() {
@@ -125,6 +126,7 @@ export function Main() {
     <FanOut key={46} />,
     <Flower key={47} />,
     <EnterAnimate key={48} />,
+    <ScrollParent key={49} />,
   ];
 
   return (
