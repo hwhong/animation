@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./page.module.css";
 import {
   motion,
@@ -75,9 +75,7 @@ export default function Home() {
     lastScrollDirection.current = scrollDirection;
   });
 
-  const isNew = false;
-
-  return isNew ? (
+  return (
     <div className={styles.root}>
       <motion.header
         style={{
@@ -94,21 +92,22 @@ export default function Home() {
               href="https://github.com/hwhong"
               target="_blank"
             >
-              by Warren
+              by Warren Hong
             </a>
           </div>
-          <button
+          {/* <button
             className={styles.githubButton}
             onClick={() =>
               window.open("https://github.com/hwhong/animation", "_blank")
             }
           >
             View on Github
-          </button>
+          </button> */}
         </div>
       </motion.header>
+      <div className={styles.main}>
+        <Main />
+      </div>
     </div>
-  ) : (
-    <Main />
   );
 }

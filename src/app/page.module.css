@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.main {
+  padding-top: 100px;
+}
+
 .header {
   position: fixed;
   inset: auto 0px;
@@ -55,20 +59,4 @@
 .toolbar {
   height: 80px;
   border-bottom: 1px solid black;
-}
-
-.content {
-  display: grid;
-
-  padding-left: 16px;
-  padding-right: 16px;
-  padding: 9rem 16px 32px 16px;
-
-  gap: 16px;
-  background-color: #f7f7f8;
-  grid-template-columns: repeat(auto-fill, minmax(500px, auto));
-}
-
-.scrollZoomOverride {
-  height: 100%;
 }
