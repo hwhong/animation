@@ -22,7 +22,7 @@ export { CreditCard } from "./21/credit-card";
 export { ColorGradient } from "./22/color-gradient";
 export { CursorGradient } from "./23/cursor-gradient";
 export { Tilt } from "./24/tilt";
-export { Input } from "./25/input";
+export { Wiggle } from "./25/wiggle";
 export { FanOutCards } from "./26/fan-out-cards";
 export { Severance } from "./27/severance";
 export { NightMode } from "./28/night-mode";

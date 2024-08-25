@@ -1,0 +1,18 @@
+.item {
+  width: 200px;
+  height: 100px;
+  border-radius: var(--size2);
+  margin: var(--size2);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.green {
+  background-color: var(--green);
+}

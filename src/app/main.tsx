@@ -29,7 +29,7 @@ import {
   ColorGradient,
   CursorGradient,
   Tilt,
-  Input,
+  Wiggle,
   FanOutCards,
   Severance,
   NightMode,
@@ -93,8 +93,6 @@ export function Main() {
     }
   };
 
-  const incompletes = [25, 35];
-
   const components = [
     <></>,
     <ButtonGroupDemo key={1} />,
@@ -121,7 +119,7 @@ export function Main() {
     <ColorGradient key={22} />,
     <CursorGradient key={23} />,
     <Tilt key={24} />,
-    <Input key={25} />,
+    <Wiggle key={25} />,
     <FanOutCards key={26} />,
     <Severance key={27} />,
     <NightMode key={28} />,
@@ -161,37 +159,33 @@ export function Main() {
           />
         ) : null}
       </AnimatePresence>
-      <AnimatePresence>
-        {selectedItem && (
-          <motion.div
-            layoutId={`selectedIdx-${selectedItem}`}
-            className={styles.modal}
-            ref={ref}
-            initial={{ scale: 0.7 }}
-            animate={{ scale: 1 }}
-          >
-            {components[selectedItem] ?? selectedItem}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {selectedItem && (
+        <motion.div
+          layoutId={`selectedIdx-${selectedItem}`}
+          className={styles.modal}
+          ref={ref}
+          initial={{ scale: 0.7 }}
+          animate={{ scale: 1 }}
+        >
+          {components[selectedItem] ?? selectedItem}
+        </motion.div>
+      )}
       <div className={styles.root}>
         {Array.from(Array(50).keys()).map((i) => {
           const idx = i + 1;
           /** Modal exists */
           const isSelectionActive = selectedItem !== null;
-          const isIncomplete = incompletes.includes(idx);
+          // const isIncomplete = incompletes.includes(idx);
 
           return (
             <motion.div
               key={idx}
               layoutId={`selectedIdx-${selectedItem}`}
-              onClick={() =>
-                !isSelectionActive && !isIncomplete && onItemClick(idx)
-              }
+              onClick={() => !isSelectionActive && onItemClick(idx)}
               className={classNames(styles.block, GeistMono.className, {
                 [styles.unfinished]: components.length - 1 < idx,
                 [styles.activeSelection]: isSelectionActive,
-                [styles.incomplete]: isIncomplete,
+                // [styles.incomplete]: isIncomplete,
               })}
             >
               {idx}

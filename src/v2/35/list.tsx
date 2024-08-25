@@ -13,7 +13,13 @@ import { useOnClickOutside } from "usehooks-ts";
 import classNames from "classnames";
 
 export function List() {
-  const [items, setItems] = useState<string[]>([]);
+  const [items, setItems] = useState<string[]>([
+    "New York",
+    "Los Angeles",
+    "San Francisco",
+    "Seoul",
+    "Taipei",
+  ]);
   const [value, setValue] = useState("");
   const [emoji, setEmoji] = useState("⚽️");
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
@@ -37,7 +43,7 @@ export function List() {
 
   return (
     <div className={styles.root}>
-      <div className={styles.inputWrapper}>
+      {/* <div className={styles.inputWrapper}>
         <div
           className={styles.emojiDisplay}
           onClick={onDisplayClick}
@@ -82,7 +88,7 @@ export function List() {
         >
           <AddIcon />
         </motion.button>
-      </div>
+      </div> */}
       <div className={styles.divider} />
 
       <Reorder.Group
@@ -105,14 +111,14 @@ interface Props {
 
 function Item({ item }: Props) {
   const y = useMotionValue(0);
-  const boxShadow = useRaisedShadow(y);
+  // const boxShadow = useRaisedShadow(y);
 
   return (
     <Reorder.Item
       className={classNames(styles.listStyle, styles.item)}
       value={item}
       id={item}
-      style={{ boxShadow, y }}
+      style={{ y }}
     >
       <span>{item}</span>
     </Reorder.Item>
