@@ -93,7 +93,7 @@ export function Main() {
     }
   };
 
-  const incompletes = [5, 17, 24, 25, 35, 38];
+  const incompletes = [25, 35];
 
   const components = [
     <></>,

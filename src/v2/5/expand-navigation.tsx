@@ -24,8 +24,7 @@ export function ExpandNavigation() {
       <motion.div
         className={styles.root}
         layout
-        // Super hacky here
-        animate={{ height: hoverIdx === null ? "auto" : bounds.height! }}
+        animate={{ height: bounds.height! }}
       >
         <div
           ref={ref}
@@ -36,7 +35,9 @@ export function ExpandNavigation() {
             {tabContent.map(({ tabName }, i) => (
               <li key={tabName} className={styles.tabItem}>
                 {/** Wrap text around span avoid doom-flickers */}
-                <span onMouseOver={() => setHoverIdx(i)}>{tabName}</span>
+                <motion.span onHoverStart={() => setHoverIdx(i)}>
+                  {tabName}
+                </motion.span>
               </li>
             ))}
           </ul>
@@ -49,8 +50,8 @@ export function ExpandNavigation() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
-                onMouseEnter={() => setHoverIdx(hoverIdx)}
-                onMouseLeave={() => setHoverIdx(null)}
+                onHoverStart={() => setHoverIdx(hoverIdx)}
+                onHoverEnd={() => setHoverIdx(null)}
               >
                 {tabContent[hoverIdx].content}
               </motion.div>

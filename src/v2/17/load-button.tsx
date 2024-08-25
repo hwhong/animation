@@ -4,9 +4,9 @@ import { Spinner } from "../../utils/spinner";
 import styles from "./load-button.module.css";
 
 const buttonCopy = {
-  idle: "Send me a login link",
+  idle: "Submit",
   loading: <Spinner />,
-  success: "Login link sent!",
+  success: "Sent!",
 };
 
 enum State {
