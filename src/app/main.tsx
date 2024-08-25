@@ -54,17 +54,30 @@ import {
   Flower,
   EnterAnimate,
   ScrollParent,
+  Pendulum,
 } from "@/v2";
 
 export function Main() {
   const [selectedItem, setSelectedItem] = useState<null | number>(null);
   const ref = useRef(null);
-  useOnClickOutside(ref, (e) => setSelectedItem(null));
+
+  const removeHidden = () => {
+    const body = document.querySelector("body");
+    if (body) {
+      body.style.overflow = "auto";
+    }
+  };
+
+  useOnClickOutside(ref, (e) => {
+    setSelectedItem(null);
+    removeHidden();
+  });
 
   useEffect(() => {
     function onKeyDown(event: any) {
       if (event.key === "Escape") {
         setSelectedItem(null);
+        removeHidden();
       }
     }
 
@@ -72,7 +85,13 @@ export function Main() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const onItemClick = (index: number) => setSelectedItem(index);
+  const onItemClick = (index: number) => {
+    setSelectedItem(index);
+    const body = document.querySelector("body");
+    if (body) {
+      body.style.overflow = "hidden";
+    }
+  };
 
   const incompletes = [5, 17, 24, 25, 35, 38];
 
@@ -127,6 +146,7 @@ export function Main() {
     <Flower key={47} />,
     <EnterAnimate key={48} />,
     <ScrollParent key={49} />,
+    <Pendulum key={50} />,
   ];
 
   return (
@@ -155,7 +175,7 @@ export function Main() {
         )}
       </AnimatePresence>
       <div className={styles.root}>
-        {Array.from(Array(100).keys()).map((i) => {
+        {Array.from(Array(50).keys()).map((i) => {
           const idx = i + 1;
           /** Modal exists */
           const isSelectionActive = selectedItem !== null;

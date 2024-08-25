@@ -47,8 +47,9 @@ export { FanOut } from "./46/fan-out";
 export { Flower } from "./47/flower";
 export { EnterAnimate } from "./48/enter-animate";
 export { ScrollParent } from "./49/scroll-parent";
+export { Pendulum } from "./50/pendulum";
 
-export { InfiniteScroll } from "./50/infinite-scroll";
+export { InfiniteScroll } from "./unfinished/infinite-scroll";
 
 /** Ideas
     Wheel, infinite-scroll (https://www.oldfriends.studio/about)

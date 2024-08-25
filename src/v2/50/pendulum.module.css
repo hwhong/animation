@@ -1,0 +1,17 @@
+.pendulum {
+  width: 5px;
+  height: 200px;
+  background-color: var(--gray500);
+  transform-origin: 50% 0;
+  position: relative;
+}
+
+.bob {
+  width: 20px;
+  height: 20px;
+  background-color: var(--gray500);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -15px;
+  left: -8px;
+}

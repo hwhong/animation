@@ -43,16 +43,17 @@ export function ButtonGroup({
       />
       {groupContents.map((content, i) => (
         <li key={content}>
-          <button
+          <motion.button
             className={classNames(styles.button, {
               [styles.active]: i === activeIndex,
             })}
             onClick={() => setActiveIndex(i)}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            // hover is guaranteed to only fire as a result of actual mouse events (as opposed to browser-generated mice events emulated from touch input).
+            onHoverStart={onMouseEnter}
+            onHoverEnd={onMouseLeave}
           >
             {content}
-          </button>
+          </motion.button>
         </li>
       ))}
     </ul>
